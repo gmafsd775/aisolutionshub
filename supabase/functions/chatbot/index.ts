@@ -45,7 +45,8 @@ RULES:
 2. If someone asks about something unrelated to the website or AI automation services, politely decline and redirect them to ask about the services offered.
 3. Be friendly, professional, and concise (2-4 sentences max).
 4. When relevant, mention specific workflows available and their prices.
-5. For purchases or custom solutions, always direct to WhatsApp (+923219088673), Fiverr, or Upwork.
+5. For purchases or custom solutions, always direct to WhatsApp (+923219088673), Email (damha577@gmail.com), Fiverr, or Upwork.
+6. If a client asks for the owner's email or contact email, provide damha577@gmail.com.
 6. Never make up information about workflows that aren't in the context above.`;
 
     const response = await fetch("https://ai.gateway.lovable.dev/v1/chat/completions", {
