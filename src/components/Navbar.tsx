@@ -29,10 +29,11 @@ export default function Navbar() {
 
   return (
     <>
-      <nav className="sticky top-0 z-50 border-b glass">
+      <nav className="sticky top-0 z-50 glass">
+        <div className="glow-line" />
         <div className="container mx-auto flex h-16 items-center justify-between px-4">
           <Link to="/" className="flex items-center gap-2.5 font-display font-bold text-xl">
-            <div className="h-9 w-9 rounded-xl flex items-center justify-center" style={{ background: "var(--gradient-hero)" }}>
+            <div className="h-9 w-9 rounded-xl flex items-center justify-center animate-pulse-glow" style={{ background: "var(--gradient-hero)" }}>
               <Bot className="h-5 w-5 text-primary-foreground" />
             </div>
             <span className="text-gradient">AI Solutions</span>
@@ -43,7 +44,7 @@ export default function Navbar() {
               <Link key={link.to} to={link.to}
                 className={`px-4 py-2 rounded-xl text-sm font-medium transition-all duration-200 ${
                   location.pathname === link.to
-                    ? "bg-primary/10 text-primary font-semibold"
+                    ? "bg-primary/15 text-primary font-semibold neon-border"
                     : "text-muted-foreground hover:text-foreground hover:bg-muted/60"
                 }`}
               >{link.label}</Link>
@@ -61,11 +62,11 @@ export default function Navbar() {
         </div>
 
         {mobileOpen && (
-          <div className="md:hidden border-t glass px-4 pb-4 animate-fade-in">
+          <div className="md:hidden border-t border-border/50 bg-card px-4 pb-4 animate-fade-in">
             {NAV_LINKS.map((link) => (
               <Link key={link.to} to={link.to} onClick={() => setMobileOpen(false)}
                 className={`block px-4 py-3 rounded-xl text-sm font-medium transition-colors ${
-                  location.pathname === link.to ? "bg-primary/10 text-primary" : "text-muted-foreground"
+                  location.pathname === link.to ? "bg-primary/15 text-primary neon-border" : "text-muted-foreground"
                 }`}
               >{link.label}</Link>
             ))}
