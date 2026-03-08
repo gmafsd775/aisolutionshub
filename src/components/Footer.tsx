@@ -22,7 +22,7 @@ export default function Footer() {
             <div className="flex flex-col gap-2.5 text-sm">
               {[
                 { to: "/", label: "Home" },
-                { to: "/workflows", label: "Solutions" },
+                { to: "/workflows", label: "n8n Workflows" },
                 { to: "/contact", label: "Contact" },
                 { to: "/about", label: "About" },
               ].map((l) => (
