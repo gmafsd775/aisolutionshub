@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Mail, MessageCircle, ExternalLink, Clock } from "lucide-react";
+import { Mail, MessageCircle, ExternalLink, Clock, Send } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
@@ -16,20 +16,21 @@ export default function ContactPage() {
       toast.error("Please fill in all fields");
       return;
     }
-    // In production, send to damha577@gmail.com and gmafsd775@gmail.com
     toast.success("Message sent! I'll get back to you soon.");
     setForm({ name: "", email: "", message: "" });
   };
 
   return (
-    <div className="container mx-auto px-4 py-10 max-w-4xl">
-      <h1 className="text-3xl font-bold mb-2">Contact Me</h1>
-      <p className="text-muted-foreground mb-8">Have questions? Reach out through any of these channels.</p>
+    <div className="container mx-auto px-4 py-12 max-w-4xl">
+      <div className="mb-10">
+        <h1 className="font-display text-3xl md:text-4xl font-bold mb-3">Let's Connect</h1>
+        <p className="text-muted-foreground text-lg">Have a project in mind? I'd love to hear about it.</p>
+      </div>
 
       <div className="grid md:grid-cols-2 gap-8">
-        <Card>
-          <CardContent className="p-6">
-            <h2 className="font-semibold text-lg mb-4">Send a Message</h2>
+        <Card className="border-0 shadow-card">
+          <CardContent className="p-7">
+            <h2 className="font-display font-semibold text-lg mb-5">Send a Message</h2>
             <form onSubmit={handleSubmit} className="space-y-4">
               <div>
                 <Label>Name</Label>
@@ -41,24 +42,26 @@ export default function ContactPage() {
               </div>
               <div>
                 <Label>Message</Label>
-                <Textarea value={form.message} onChange={(e) => setForm({ ...form, message: e.target.value })} placeholder="How can I help?" rows={4} />
+                <Textarea value={form.message} onChange={(e) => setForm({ ...form, message: e.target.value })} placeholder="Tell me about your project..." rows={4} />
               </div>
-              <Button type="submit" className="w-full">Send Message</Button>
+              <Button type="submit" variant="hero" className="w-full gap-2">
+                <Send className="h-4 w-4" /> Send Message
+              </Button>
             </form>
           </CardContent>
         </Card>
 
-        <div className="space-y-4">
-          <Card>
-            <CardContent className="p-6 space-y-4">
-              <h2 className="font-semibold text-lg">Direct Channels</h2>
+        <div className="space-y-5">
+          <Card className="border-0 shadow-card">
+            <CardContent className="p-6 space-y-3">
+              <h2 className="font-display font-semibold text-lg mb-2">Direct Channels</h2>
               <a href="https://wa.me/923219088673" target="_blank" rel="noopener noreferrer">
-                <Button variant="outline" className="w-full gap-2 justify-start">
+                <Button variant="outline" className="w-full gap-2 justify-start mb-2">
                   <MessageCircle className="h-4 w-4 text-whatsapp" /> WhatsApp: +923219088673
                 </Button>
               </a>
               <a href="https://www.fiverr.com/s/pdRm5pG" target="_blank" rel="noopener noreferrer">
-                <Button variant="outline" className="w-full gap-2 justify-start">
+                <Button variant="outline" className="w-full gap-2 justify-start mb-2">
                   <ExternalLink className="h-4 w-4 text-fiverr" /> Fiverr Profile
                 </Button>
               </a>
@@ -70,19 +73,24 @@ export default function ContactPage() {
             </CardContent>
           </Card>
 
-          <Card>
-            <CardContent className="p-6 flex items-center gap-3">
-              <Clock className="h-8 w-8 text-primary" />
+          <Card className="border-0 shadow-card">
+            <CardContent className="p-6 flex items-center gap-4">
+              <div className="h-12 w-12 rounded-xl bg-gradient-to-br from-primary/10 to-primary-glow/10 flex items-center justify-center flex-shrink-0">
+                <Clock className="h-6 w-6 text-primary" />
+              </div>
               <div>
-                <h3 className="font-semibold text-sm">Response Time</h3>
-                <p className="text-sm text-muted-foreground">Usually within 2-4 hours</p>
+                <h3 className="font-display font-semibold text-sm">Fast Response</h3>
+                <p className="text-sm text-muted-foreground">Typically within 2-4 hours</p>
               </div>
             </CardContent>
           </Card>
 
-          <Card>
+          <Card className="border-0 shadow-card">
             <CardContent className="p-6">
-              <h3 className="font-semibold text-sm mb-1">Email</h3>
+              <div className="flex items-center gap-3 mb-2">
+                <Mail className="h-5 w-5 text-primary" />
+                <h3 className="font-display font-semibold text-sm">Email</h3>
+              </div>
               <p className="text-sm text-muted-foreground">damha577@gmail.com</p>
               <p className="text-sm text-muted-foreground">gmafsd775@gmail.com</p>
             </CardContent>

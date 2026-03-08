@@ -7,12 +7,14 @@ export default function WorkflowsPage() {
   const authed = isAuthenticated();
 
   return (
-    <div className="container mx-auto px-4 py-10">
-      <h1 className="text-3xl font-bold mb-2">Workflows</h1>
-      <p className="text-muted-foreground mb-8">Browse ready-to-use n8n automation workflows.</p>
+    <div className="container mx-auto px-4 py-12">
+      <div className="mb-10">
+        <h1 className="font-display text-3xl md:text-4xl font-bold mb-3">Automation Solutions</h1>
+        <p className="text-muted-foreground text-lg max-w-xl">Browse our library of ready-to-deploy n8n workflows designed to scale your business.</p>
+      </div>
 
       {authed && (
-        <div className="mb-10 p-6 rounded-xl border-2 border-primary/20 bg-primary/5">
+        <div className="mb-12 p-6 rounded-2xl border-2 border-primary/20 bg-accent/50">
           <OwnerDashboard />
         </div>
       )}
