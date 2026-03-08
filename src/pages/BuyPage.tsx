@@ -9,6 +9,7 @@ import { Card, CardContent } from "@/components/ui/card";
 import { getWorkflowById } from "@/lib/store";
 import { Workflow } from "@/lib/types";
 import { toast } from "sonner";
+import { supabase } from "@/integrations/supabase/client";
 
 export default function BuyPage() {
   const { id } = useParams<{ id: string }>();
