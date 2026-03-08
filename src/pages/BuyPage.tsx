@@ -17,6 +17,7 @@ export default function BuyPage() {
   const [loading, setLoading] = useState(true);
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
+  const [sending, setSending] = useState(false);
 
   useEffect(() => {
     getWorkflowById(id || "").then((w) => {
@@ -38,7 +39,6 @@ export default function BuyPage() {
     );
   }
 
-  const [sending, setSending] = useState(false);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
