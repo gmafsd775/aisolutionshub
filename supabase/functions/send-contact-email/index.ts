@@ -38,7 +38,7 @@ serve(async (req) => {
       console.error("DB error:", dbError);
     }
 
-    // Try to send email via Resend
+    // Send email via Resend
     const RESEND_API_KEY = Deno.env.get("RESEND_API_KEY");
     let emailSent = false;
 
@@ -48,12 +48,14 @@ serve(async (req) => {
         : "New Contact Message";
 
       const htmlContent = `
-        <h2>${subject}</h2>
+        <h2 style="color: #7c3aed;">${subject}</h2>
         <p><strong>Name:</strong> ${name}</p>
         <p><strong>Email:</strong> ${email}</p>
         ${workflowTitle ? `<p><strong>Workflow:</strong> ${workflowTitle}</p>` : ""}
         <p><strong>Message:</strong></p>
         <p>${message || "No message provided"}</p>
+        <hr style="border: 1px solid #e5e7eb; margin: 20px 0;">
+        <p style="color: #6b7280; font-size: 12px;">Sent from AI Solutions Hub</p>
       `;
 
       try {
@@ -65,7 +67,7 @@ serve(async (req) => {
           },
           body: JSON.stringify({
             from: "AI Solutions Hub <onboarding@resend.dev>",
-            to: ["mrdevil.3444@gmail.com"],
+            to: ["damha577@gmail.com"],
             subject,
             html: htmlContent,
           }),
@@ -73,6 +75,7 @@ serve(async (req) => {
 
         if (res.ok) {
           emailSent = true;
+          console.log("Email sent successfully to damha577@gmail.com");
         } else {
           const errorData = await res.text();
           console.error("Resend error:", errorData);
