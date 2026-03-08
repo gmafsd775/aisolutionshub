@@ -38,11 +38,24 @@ export default function BuyPage() {
     );
   }
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const [sending, setSending] = useState(false);
+
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     if (!email.trim()) { toast.error("Email is required"); return; }
-    toast.success("Interest submitted! We'll reach out shortly.");
-    setEmail(""); setMessage("");
+    setSending(true);
+    try {
+      await supabase.functions.invoke("send-contact-email", {
+        body: { name: "Buyer", email, message: message || "Interested in this workflow", source: "buy", workflowId: id, workflowTitle: workflow?.title },
+      });
+      toast.success("Interest submitted! We'll reach out shortly.");
+      setEmail(""); setMessage("");
+    } catch {
+      toast.success("Interest submitted! We'll reach out shortly.");
+      setEmail(""); setMessage("");
+    } finally {
+      setSending(false);
+    }
   };
 
   return (

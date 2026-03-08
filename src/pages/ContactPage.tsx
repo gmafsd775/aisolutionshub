@@ -51,7 +51,7 @@ export default function ContactPage() {
               <div><Label>Name</Label><Input value={form.name} onChange={(e) => setForm({ ...form, name: e.target.value })} placeholder="Your name" /></div>
               <div><Label>Email</Label><Input type="email" value={form.email} onChange={(e) => setForm({ ...form, email: e.target.value })} placeholder="your@email.com" /></div>
               <div><Label>Message</Label><Textarea value={form.message} onChange={(e) => setForm({ ...form, message: e.target.value })} placeholder="Tell me about your project..." rows={4} /></div>
-              <Button type="submit" variant="hero" className="w-full gap-2"><Send className="h-4 w-4" /> Send Message</Button>
+              <Button type="submit" variant="hero" className="w-full gap-2" disabled={sending}><Send className="h-4 w-4" /> {sending ? "Sending..." : "Send Message"}</Button>
             </form>
           </CardContent>
         </Card>
