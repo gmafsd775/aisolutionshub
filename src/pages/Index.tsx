@@ -1,11 +1,17 @@
+import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { ArrowRight, Bot, Shield, Zap, Rocket, Star, TrendingUp, Sparkles } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { getWorkflows } from "@/lib/store";
 import WorkflowCard from "@/components/WorkflowCard";
+import { Workflow } from "@/lib/types";
 
 export default function Index() {
-  const workflows = getWorkflows().slice(0, 4);
+  const [workflows, setWorkflows] = useState<Workflow[]>([]);
+
+  useEffect(() => {
+    getWorkflows().then((data) => setWorkflows(data.slice(0, 4)));
+  }, []);
 
   return (
     <div>

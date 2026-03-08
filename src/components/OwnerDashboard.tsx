@@ -9,52 +9,73 @@ import { Workflow } from "@/lib/types";
 import { getWorkflows, saveWorkflow, updateWorkflow, deleteWorkflow } from "@/lib/store";
 import { toast } from "sonner";
 
-export default function OwnerDashboard() {
-  const [workflows, setWorkflows] = useState<Workflow[]>(getWorkflows());
+interface Props {
+  onChanged?: () => void;
+}
+
+export default function OwnerDashboard({ onChanged }: Props) {
+  const [workflows, setWorkflows] = useState<Workflow[]>([]);
   const [showForm, setShowForm] = useState(false);
   const [editingId, setEditingId] = useState<string | null>(null);
   const [form, setForm] = useState({ title: "", description: "", price: 0 });
   const [imageFile, setImageFile] = useState<File | null>(null);
   const [videoFile, setVideoFile] = useState<File | null>(null);
+  const [loading, setLoading] = useState(false);
 
-  const refresh = () => setWorkflows(getWorkflows());
+  const refresh = async () => {
+    const data = await getWorkflows();
+    setWorkflows(data);
+    onChanged?.();
+  };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  // Load on mount
+  useState(() => { refresh(); });
+
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     if (!form.title.trim()) { toast.error("Title is required"); return; }
-
-    const newWorkflow: Workflow = {
-      id: Date.now().toString(),
-      title: form.title,
-      description: form.description,
-      price: form.price,
-      imageUrl: imageFile ? URL.createObjectURL(imageFile) : "",
-      videoUrl: videoFile ? URL.createObjectURL(videoFile) : undefined,
-      videoFileName: videoFile?.name,
-      videoFileSize: videoFile?.size,
-      createdAt: new Date().toISOString(),
-    };
-
-    saveWorkflow(newWorkflow);
-    toast.success("Workflow added!");
-    setForm({ title: "", description: "", price: 0 });
-    setImageFile(null);
-    setVideoFile(null);
-    setShowForm(false);
-    refresh();
+    setLoading(true);
+    try {
+      await saveWorkflow({
+        title: form.title,
+        description: form.description,
+        price: form.price,
+        imageFile,
+        videoFile,
+      });
+      toast.success("Workflow added!");
+      setForm({ title: "", description: "", price: 0 });
+      setImageFile(null);
+      setVideoFile(null);
+      setShowForm(false);
+      await refresh();
+    } catch (err: any) {
+      toast.error(err.message || "Failed to save");
+    }
+    setLoading(false);
   };
 
-  const handleUpdate = (id: string) => {
-    updateWorkflow(id, { description: form.description, price: form.price, title: form.title });
-    toast.success("Updated!");
-    setEditingId(null);
-    refresh();
+  const handleUpdate = async (id: string) => {
+    setLoading(true);
+    try {
+      await updateWorkflow(id, { description: form.description, price: form.price, title: form.title });
+      toast.success("Updated!");
+      setEditingId(null);
+      await refresh();
+    } catch (err: any) {
+      toast.error(err.message || "Failed to update");
+    }
+    setLoading(false);
   };
 
-  const handleDelete = (id: string) => {
-    deleteWorkflow(id);
-    toast.success("Deleted");
-    refresh();
+  const handleDelete = async (id: string) => {
+    try {
+      await deleteWorkflow(id);
+      toast.success("Deleted");
+      await refresh();
+    } catch (err: any) {
+      toast.error(err.message || "Failed to delete");
+    }
   };
 
   const startEdit = (w: Workflow) => {
@@ -104,7 +125,7 @@ export default function OwnerDashboard() {
                 <Input type="file" accept="video/mp4,video/mov,video/avi,video/x-matroska" onChange={(e) => setVideoFile(e.target.files?.[0] || null)} />
                 {videoFile && <p className="text-xs text-muted-foreground mt-1">{videoFile.name} ({formatSize(videoFile.size)})</p>}
               </div>
-              <Button type="submit">Submit Workflow</Button>
+              <Button type="submit" disabled={loading}>{loading ? "Uploading..." : "Submit Workflow"}</Button>
             </form>
           </CardContent>
         </Card>
@@ -120,7 +141,7 @@ export default function OwnerDashboard() {
                   <Textarea value={form.description} onChange={(e) => setForm({ ...form, description: e.target.value })} />
                   <Input type="number" value={form.price} onChange={(e) => setForm({ ...form, price: Number(e.target.value) })} />
                   <div className="flex gap-2">
-                    <Button size="sm" onClick={() => handleUpdate(w.id)} className="gap-1"><Save className="h-3 w-3" /> Save</Button>
+                    <Button size="sm" onClick={() => handleUpdate(w.id)} disabled={loading} className="gap-1"><Save className="h-3 w-3" /> Save</Button>
                     <Button size="sm" variant="ghost" onClick={() => setEditingId(null)}><X className="h-3 w-3" /> Cancel</Button>
                   </div>
                 </div>
