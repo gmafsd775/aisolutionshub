@@ -1,8 +1,8 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { Menu, X, LogIn, LogOut, Bot } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { isAuthenticated, logout } from "@/lib/store";
+import { getSession, signOut } from "@/lib/store";
 import LoginModal from "./LoginModal";
 
 const NAV_LINKS = [
@@ -15,10 +15,17 @@ const NAV_LINKS = [
 export default function Navbar() {
   const [mobileOpen, setMobileOpen] = useState(false);
   const [loginOpen, setLoginOpen] = useState(false);
+  const [authed, setAuthed] = useState(false);
   const location = useLocation();
-  const authed = isAuthenticated();
 
-  const handleLogout = () => { logout(); window.location.reload(); };
+  useEffect(() => {
+    getSession().then((s) => setAuthed(!!s));
+  }, []);
+
+  const handleLogout = async () => {
+    await signOut();
+    window.location.reload();
+  };
 
   return (
     <>

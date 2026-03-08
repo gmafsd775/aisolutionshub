@@ -3,7 +3,7 @@ import { Dialog, DialogContent, DialogHeader, DialogTitle } from "@/components/u
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { Label } from "@/components/ui/label";
-import { login } from "@/lib/store";
+import { signIn } from "@/lib/store";
 import { toast } from "sonner";
 
 interface Props {
@@ -12,18 +12,22 @@ interface Props {
 }
 
 export default function LoginModal({ open, onClose }: Props) {
-  const [username, setUsername] = useState("");
+  const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [loading, setLoading] = useState(false);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    if (login(username, password)) {
-      toast.success("Welcome back, Ahmed!");
+    setLoading(true);
+    try {
+      await signIn(email, password);
+      toast.success("Welcome back!");
       onClose();
       window.location.reload();
-    } else {
-      toast.error("Invalid credentials");
+    } catch (err: any) {
+      toast.error(err.message || "Invalid credentials");
     }
+    setLoading(false);
   };
 
   return (
@@ -34,14 +38,14 @@ export default function LoginModal({ open, onClose }: Props) {
         </DialogHeader>
         <form onSubmit={handleSubmit} className="space-y-4">
           <div>
-            <Label htmlFor="username">Username</Label>
-            <Input id="username" value={username} onChange={(e) => setUsername(e.target.value)} />
+            <Label htmlFor="email">Email</Label>
+            <Input id="email" type="email" value={email} onChange={(e) => setEmail(e.target.value)} />
           </div>
           <div>
             <Label htmlFor="password">Password</Label>
             <Input id="password" type="password" value={password} onChange={(e) => setPassword(e.target.value)} />
           </div>
-          <Button type="submit" className="w-full">Login</Button>
+          <Button type="submit" className="w-full" disabled={loading}>{loading ? "Signing in..." : "Login"}</Button>
         </form>
       </DialogContent>
     </Dialog>

@@ -1,3 +1,4 @@
+import { useState, useEffect } from "react";
 import { useParams, Link } from "react-router-dom";
 import { ArrowLeft, DollarSign, ExternalLink, MessageCircle, Mail, Play, Sparkles } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -6,14 +7,26 @@ import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
 import { Card, CardContent } from "@/components/ui/card";
 import { getWorkflowById } from "@/lib/store";
-import { useState } from "react";
+import { Workflow } from "@/lib/types";
 import { toast } from "sonner";
 
 export default function BuyPage() {
   const { id } = useParams<{ id: string }>();
-  const workflow = getWorkflowById(id || "");
+  const [workflow, setWorkflow] = useState<Workflow | null>(null);
+  const [loading, setLoading] = useState(true);
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
+
+  useEffect(() => {
+    getWorkflowById(id || "").then((w) => {
+      setWorkflow(w || null);
+      setLoading(false);
+    });
+  }, [id]);
+
+  if (loading) {
+    return <div className="container mx-auto px-4 py-20 text-center"><p className="text-muted-foreground">Loading...</p></div>;
+  }
 
   if (!workflow) {
     return (

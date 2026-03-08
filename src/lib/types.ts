@@ -4,9 +4,7 @@ export interface Workflow {
   description: string;
   price: number;
   imageUrl: string;
-  videoUrl?: string;
-  videoFileName?: string;
-  videoFileSize?: number;
+  videoUrl: string;
   createdAt: string;
 }
 
