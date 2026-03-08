@@ -17,16 +17,18 @@ export default function Index() {
     <div>
       {/* Hero */}
       <section className="relative py-24 md:py-40 px-4 overflow-hidden">
-        <div className="absolute inset-0 bg-grid opacity-30" />
-        <div className="absolute top-10 left-[10%] w-80 h-80 rounded-full blur-[120px] opacity-40" style={{ background: "hsl(255 85% 60%)" }} />
-        <div className="absolute bottom-0 right-[15%] w-96 h-96 rounded-full blur-[140px] opacity-30" style={{ background: "hsl(340 82% 58%)" }} />
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] rounded-full blur-[160px] opacity-20" style={{ background: "hsl(200 90% 55%)" }} />
+        <div className="absolute inset-0 bg-grid opacity-40" />
+        {/* Neon orbs */}
+        <div className="absolute top-10 left-[10%] w-80 h-80 rounded-full blur-[140px] opacity-50" style={{ background: "hsl(270 100% 65%)" }} />
+        <div className="absolute bottom-0 right-[15%] w-96 h-96 rounded-full blur-[160px] opacity-35" style={{ background: "hsl(330 100% 60%)" }} />
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] rounded-full blur-[180px] opacity-20" style={{ background: "hsl(185 100% 55%)" }} />
+        <div className="absolute top-[20%] right-[5%] w-40 h-40 rounded-full blur-[100px] opacity-30" style={{ background: "hsl(150 100% 50%)" }} />
 
         <div className="container mx-auto text-center max-w-4xl relative z-10">
-          <div className="inline-flex items-center gap-2 rounded-full border bg-card/80 backdrop-blur-sm px-5 py-2.5 text-sm mb-8 animate-fade-in shadow-card">
-            <Sparkles className="h-4 w-4 text-accent" />
+          <div className="inline-flex items-center gap-2 rounded-full neon-border bg-card/60 backdrop-blur-sm px-5 py-2.5 text-sm mb-8 animate-fade-in shadow-card">
+            <Sparkles className="h-4 w-4 text-neon-pink" />
             <span className="text-muted-foreground">Intelligent Automation for Modern Business</span>
-            <span className="h-2 w-2 rounded-full bg-success animate-pulse" />
+            <span className="h-2 w-2 rounded-full bg-neon-green animate-pulse" />
           </div>
 
           <h1 className="font-display text-5xl md:text-7xl lg:text-8xl font-extrabold tracking-tight mb-6 animate-slide-up leading-[1.05]">
@@ -50,13 +52,13 @@ export default function Index() {
           {/* Stats */}
           <div className="grid grid-cols-3 gap-4 mt-16 max-w-md mx-auto animate-slide-up" style={{ animationDelay: "0.35s" }}>
             {[
-              { value: "50+", label: "Workflows", icon: Rocket, color: "text-primary" },
-              { value: "98%", label: "Happy Clients", icon: Star, color: "text-accent" },
-              { value: "24h", label: "Delivery", icon: TrendingUp, color: "text-secondary" },
+              { value: "50+", label: "Workflows", icon: Rocket, borderColor: "hsl(270 100% 65% / 0.3)", glowColor: "shadow-glow" },
+              { value: "98%", label: "Happy Clients", icon: Star, borderColor: "hsl(330 100% 60% / 0.3)", glowColor: "shadow-glow-accent" },
+              { value: "24h", label: "Delivery", icon: TrendingUp, borderColor: "hsl(185 100% 55% / 0.3)", glowColor: "shadow-glow-cyan" },
             ].map((s) => (
-              <div key={s.label} className="rounded-2xl bg-card p-4 shadow-card">
-                <s.icon className={`h-5 w-5 ${s.color} mx-auto mb-1`} />
-                <div className="font-display text-xl md:text-2xl font-bold">{s.value}</div>
+              <div key={s.label} className={`rounded-2xl bg-card p-4 ${s.glowColor} transition-shadow duration-300 hover:scale-105 transform`} style={{ border: `1px solid ${s.borderColor}` }}>
+                <s.icon className="h-5 w-5 text-neon-cyan mx-auto mb-1" />
+                <div className="font-display text-xl md:text-2xl font-bold text-foreground">{s.value}</div>
                 <div className="text-[11px] text-muted-foreground mt-0.5">{s.label}</div>
               </div>
             ))}
@@ -68,21 +70,21 @@ export default function Index() {
       <section className="py-20 px-4">
         <div className="container mx-auto">
           <div className="text-center mb-14">
-            <span className="text-xs font-bold uppercase tracking-widest text-accent mb-2 block">Why Us</span>
-            <h2 className="font-display text-3xl md:text-4xl font-bold mb-3">Everything You Need to Automate</h2>
+            <span className="text-xs font-bold uppercase tracking-widest text-neon-pink mb-2 block">Why Us</span>
+            <h2 className="font-display text-3xl md:text-4xl font-bold mb-3">Everything You Need to <span className="text-gradient-neon">Automate</span></h2>
             <p className="text-muted-foreground max-w-xl mx-auto">From simple tasks to complex AI pipelines — we build it all.</p>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-5xl mx-auto">
             {[
-              { icon: Bot, title: "AI-Powered Flows", desc: "GPT, Claude, and other models integrated directly into your automation pipelines.", gradient: "var(--gradient-hero)", shadow: "shadow-glow" },
-              { icon: Shield, title: "Battle-Tested", desc: "Every workflow is rigorously tested with error handling and monitoring built in.", gradient: "var(--gradient-cool)", shadow: "" },
-              { icon: Zap, title: "Rapid Delivery", desc: "Get your automation live within 24-48 hours with ongoing support included.", gradient: "var(--gradient-warm)", shadow: "" },
+              { icon: Bot, title: "AI-Powered Flows", desc: "GPT, Claude, and other models integrated directly into your automation pipelines.", gradient: "var(--gradient-hero)", border: "hsl(270 100% 65% / 0.2)", iconColor: "text-neon-purple" },
+              { icon: Shield, title: "Battle-Tested", desc: "Every workflow is rigorously tested with error handling and monitoring built in.", gradient: "var(--gradient-cool)", border: "hsl(185 100% 55% / 0.2)", iconColor: "text-neon-cyan" },
+              { icon: Zap, title: "Rapid Delivery", desc: "Get your automation live within 24-48 hours with ongoing support included.", gradient: "var(--gradient-warm)", border: "hsl(330 100% 60% / 0.2)", iconColor: "text-neon-pink" },
             ].map((f) => (
-              <div key={f.title} className="rounded-3xl border bg-card p-8 shadow-card hover:shadow-card-hover transition-all duration-300 group hover:-translate-y-1">
+              <div key={f.title} className="rounded-3xl bg-card p-8 shadow-card hover:shadow-card-hover transition-all duration-300 group hover:-translate-y-1" style={{ border: `1px solid ${f.border}` }}>
                 <div className="mb-6 h-14 w-14 rounded-2xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300" style={{ background: f.gradient, opacity: 0.15 }}>
-                  <f.icon className="h-7 w-7 text-primary" />
+                  <f.icon className={`h-7 w-7 ${f.iconColor}`} />
                 </div>
-                <h3 className="font-display font-bold text-lg mb-2">{f.title}</h3>
+                <h3 className="font-display font-bold text-lg mb-2 text-foreground">{f.title}</h3>
                 <p className="text-sm text-muted-foreground leading-relaxed">{f.desc}</p>
               </div>
             ))}
@@ -95,10 +97,10 @@ export default function Index() {
         <div className="container mx-auto">
           <div className="flex items-end justify-between mb-10">
             <div>
-              <span className="text-xs font-bold uppercase tracking-widest text-secondary mb-2 block">Popular</span>
-              <h2 className="font-display text-3xl md:text-4xl font-bold">Featured n8n Workflows</h2>
+              <span className="text-xs font-bold uppercase tracking-widest text-neon-cyan mb-2 block">Popular</span>
+              <h2 className="font-display text-3xl md:text-4xl font-bold">Featured <span className="text-gradient-cool">n8n Workflows</span></h2>
             </div>
-            <Button variant="ghost" asChild className="hidden sm:inline-flex">
+            <Button variant="ghost" asChild className="hidden sm:inline-flex text-neon-cyan hover:text-neon-purple">
               <Link to="/workflows">View All <ArrowRight className="ml-1 h-4 w-4" /></Link>
             </Button>
           </div>
@@ -118,11 +120,12 @@ export default function Index() {
         <div className="container mx-auto max-w-4xl">
           <div className="rounded-3xl p-10 md:p-16 text-center relative overflow-hidden" style={{ background: "var(--gradient-hero)" }}>
             <div className="absolute inset-0 bg-grid opacity-10" />
+            <div className="absolute inset-0 rounded-3xl" style={{ boxShadow: "inset 0 0 80px hsl(270 100% 65% / 0.2)" }} />
             <div className="relative z-10">
               <h2 className="font-display text-3xl md:text-5xl font-bold text-primary-foreground mb-4">Ready to Transform Your Business?</h2>
               <p className="text-primary-foreground/80 mb-8 max-w-lg mx-auto text-lg">Get a free consultation and let's build the perfect AI workflow for you.</p>
               <div className="flex flex-col sm:flex-row gap-3 justify-center">
-                <Button size="lg" className="bg-card text-foreground hover:bg-card/90 shadow-lg" asChild>
+                <Button size="lg" className="bg-card text-foreground hover:bg-card/90 shadow-lg border border-primary/30" asChild>
                   <Link to="/contact">Start Free Consultation</Link>
                 </Button>
                 <Button size="lg" variant="outline" className="border-primary-foreground/30 text-primary-foreground hover:bg-primary-foreground/10 hover:text-primary-foreground" asChild>

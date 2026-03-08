@@ -17,13 +17,13 @@ export default function WorkflowsPage() {
   return (
     <div className="container mx-auto px-4 py-12">
       <div className="mb-10">
-        <span className="text-xs font-bold uppercase tracking-widest text-accent mb-2 block">Browse</span>
-        <h1 className="font-display text-3xl md:text-5xl font-bold mb-3">n8n Workflows</h1>
+        <span className="text-xs font-bold uppercase tracking-widest text-neon-pink mb-2 block">Browse</span>
+        <h1 className="font-display text-3xl md:text-5xl font-bold mb-3">n8n <span className="text-gradient-cool">Workflows</span></h1>
         <p className="text-muted-foreground text-lg max-w-xl">Ready-to-deploy n8n automation workflows designed to supercharge your operations.</p>
       </div>
 
       {authed && (
-        <div className="mb-12 p-6 rounded-3xl border-2 border-primary/20" style={{ background: "var(--gradient-card)" }}>
+        <div className="mb-12 p-6 rounded-3xl neon-border" style={{ background: "var(--gradient-card)" }}>
           <OwnerDashboard onChanged={() => getWorkflows().then(setWorkflows)} />
         </div>
       )}
