@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { ArrowRight, Sparkles, Workflow, Shield, Clock, Bot, Zap } from "lucide-react";
+import { ArrowRight, Bot, Shield, Zap, Rocket, Star, TrendingUp, Sparkles } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { getWorkflows } from "@/lib/store";
 import WorkflowCard from "@/components/WorkflowCard";
@@ -10,43 +10,48 @@ export default function Index() {
   return (
     <div>
       {/* Hero */}
-      <section className="relative py-24 md:py-36 px-4 overflow-hidden">
-        {/* Grid background */}
-        <div className="absolute inset-0 bg-grid opacity-40" />
-        {/* Gradient orbs */}
-        <div className="absolute top-20 left-1/4 w-72 h-72 bg-primary/20 rounded-full blur-[100px]" />
-        <div className="absolute bottom-10 right-1/4 w-96 h-96 bg-primary-glow/15 rounded-full blur-[120px]" />
+      <section className="relative py-24 md:py-40 px-4 overflow-hidden">
+        <div className="absolute inset-0 bg-grid opacity-30" />
+        <div className="absolute top-10 left-[10%] w-80 h-80 rounded-full blur-[120px] opacity-40" style={{ background: "hsl(255 85% 60%)" }} />
+        <div className="absolute bottom-0 right-[15%] w-96 h-96 rounded-full blur-[140px] opacity-30" style={{ background: "hsl(340 82% 58%)" }} />
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] rounded-full blur-[160px] opacity-20" style={{ background: "hsl(200 90% 55%)" }} />
 
         <div className="container mx-auto text-center max-w-4xl relative z-10">
-          <div className="inline-flex items-center gap-2 rounded-full border bg-card/80 backdrop-blur-sm px-4 py-2 text-sm text-muted-foreground mb-8 animate-fade-in shadow-sm">
-            <Sparkles className="h-4 w-4 text-primary" /> AI-Powered Workflow Automation
+          <div className="inline-flex items-center gap-2 rounded-full border bg-card/80 backdrop-blur-sm px-5 py-2.5 text-sm mb-8 animate-fade-in shadow-card">
+            <Sparkles className="h-4 w-4 text-accent" />
+            <span className="text-muted-foreground">Intelligent Automation for Modern Business</span>
+            <span className="h-2 w-2 rounded-full bg-success animate-pulse" />
           </div>
-          <h1 className="font-display text-5xl md:text-7xl font-extrabold tracking-tight mb-6 animate-slide-up leading-[1.1]">
-            Automate Smarter with{" "}
-            <span className="text-gradient">NexaFlow AI</span>
+
+          <h1 className="font-display text-5xl md:text-7xl lg:text-8xl font-extrabold tracking-tight mb-6 animate-slide-up leading-[1.05]">
+            Smarter Work with{" "}
+            <span className="text-gradient">AI Solutions</span>
           </h1>
+
           <p className="text-lg md:text-xl text-muted-foreground mb-10 animate-slide-up max-w-2xl mx-auto leading-relaxed" style={{ animationDelay: "0.1s" }}>
-            Custom-built n8n workflows that eliminate repetitive tasks, reduce errors, and supercharge your business operations.
+            Custom n8n workflows that automate your business, boost productivity, and deliver results — all powered by cutting-edge AI.
           </p>
+
           <div className="flex flex-col sm:flex-row gap-4 justify-center animate-slide-up" style={{ animationDelay: "0.2s" }}>
             <Button size="lg" variant="hero" asChild>
-              <Link to="/workflows">Explore Solutions <ArrowRight className="ml-2 h-4 w-4" /></Link>
+              <Link to="/workflows">Explore Solutions <ArrowRight className="ml-1 h-4 w-4" /></Link>
             </Button>
             <Button size="lg" variant="outline" asChild>
-              <Link to="/contact">Get a Custom Quote</Link>
+              <Link to="/contact">Free Consultation</Link>
             </Button>
           </div>
 
           {/* Stats */}
-          <div className="grid grid-cols-3 gap-6 mt-16 max-w-lg mx-auto animate-slide-up" style={{ animationDelay: "0.3s" }}>
+          <div className="grid grid-cols-3 gap-4 mt-16 max-w-md mx-auto animate-slide-up" style={{ animationDelay: "0.35s" }}>
             {[
-              { value: "50+", label: "Workflows Built" },
-              { value: "98%", label: "Client Satisfaction" },
-              { value: "24h", label: "Avg. Delivery" },
+              { value: "50+", label: "Workflows", icon: Rocket, color: "text-primary" },
+              { value: "98%", label: "Happy Clients", icon: Star, color: "text-accent" },
+              { value: "24h", label: "Delivery", icon: TrendingUp, color: "text-secondary" },
             ].map((s) => (
-              <div key={s.label}>
-                <div className="font-display text-2xl md:text-3xl font-bold text-gradient">{s.value}</div>
-                <div className="text-xs text-muted-foreground mt-1">{s.label}</div>
+              <div key={s.label} className="rounded-2xl bg-card p-4 shadow-card">
+                <s.icon className={`h-5 w-5 ${s.color} mx-auto mb-1`} />
+                <div className="font-display text-xl md:text-2xl font-bold">{s.value}</div>
+                <div className="text-[11px] text-muted-foreground mt-0.5">{s.label}</div>
               </div>
             ))}
           </div>
@@ -56,21 +61,22 @@ export default function Index() {
       {/* Features */}
       <section className="py-20 px-4">
         <div className="container mx-auto">
-          <div className="text-center mb-12">
-            <h2 className="font-display text-3xl font-bold mb-3">Why Choose NexaFlow AI?</h2>
-            <p className="text-muted-foreground max-w-xl mx-auto">End-to-end automation solutions designed for real business impact.</p>
+          <div className="text-center mb-14">
+            <span className="text-xs font-bold uppercase tracking-widest text-accent mb-2 block">Why Us</span>
+            <h2 className="font-display text-3xl md:text-4xl font-bold mb-3">Everything You Need to Automate</h2>
+            <p className="text-muted-foreground max-w-xl mx-auto">From simple tasks to complex AI pipelines — we build it all.</p>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-5xl mx-auto">
             {[
-              { icon: Bot, title: "AI-Integrated Workflows", desc: "Harness GPT, Claude, and other AI models directly within your automation pipelines." },
-              { icon: Shield, title: "Battle-Tested & Reliable", desc: "Every workflow is rigorously tested with error handling and monitoring built in." },
-              { icon: Zap, title: "Rapid Deployment", desc: "Get your automation live within 24-48 hours with ongoing support and optimization." },
+              { icon: Bot, title: "AI-Powered Flows", desc: "GPT, Claude, and other models integrated directly into your automation pipelines.", gradient: "var(--gradient-hero)", shadow: "shadow-glow" },
+              { icon: Shield, title: "Battle-Tested", desc: "Every workflow is rigorously tested with error handling and monitoring built in.", gradient: "var(--gradient-cool)", shadow: "" },
+              { icon: Zap, title: "Rapid Delivery", desc: "Get your automation live within 24-48 hours with ongoing support included.", gradient: "var(--gradient-warm)", shadow: "" },
             ].map((f) => (
-              <div key={f.title} className="rounded-2xl border bg-card p-7 shadow-card hover:shadow-card-hover transition-all duration-300 group">
-                <div className="mb-5 h-12 w-12 rounded-xl bg-gradient-to-br from-primary/10 to-primary-glow/10 flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
-                  <f.icon className="h-6 w-6 text-primary" />
+              <div key={f.title} className="rounded-3xl border bg-card p-8 shadow-card hover:shadow-card-hover transition-all duration-300 group hover:-translate-y-1">
+                <div className="mb-6 h-14 w-14 rounded-2xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300" style={{ background: f.gradient, opacity: 0.15 }}>
+                  <f.icon className="h-7 w-7 text-primary" />
                 </div>
-                <h3 className="font-display font-semibold text-lg mb-2">{f.title}</h3>
+                <h3 className="font-display font-bold text-lg mb-2">{f.title}</h3>
                 <p className="text-sm text-muted-foreground leading-relaxed">{f.desc}</p>
               </div>
             ))}
@@ -78,41 +84,40 @@ export default function Index() {
         </div>
       </section>
 
-      {/* Featured workflows */}
+      {/* Featured */}
       <section className="py-20 px-4" style={{ background: "var(--gradient-subtle)" }}>
         <div className="container mx-auto">
-          <div className="flex items-center justify-between mb-10">
+          <div className="flex items-end justify-between mb-10">
             <div>
-              <h2 className="font-display text-3xl font-bold">Featured Solutions</h2>
-              <p className="text-muted-foreground mt-1">Ready-to-deploy automation workflows</p>
+              <span className="text-xs font-bold uppercase tracking-widest text-secondary mb-2 block">Popular</span>
+              <h2 className="font-display text-3xl md:text-4xl font-bold">Featured Solutions</h2>
             </div>
             <Button variant="ghost" asChild className="hidden sm:inline-flex">
               <Link to="/workflows">View All <ArrowRight className="ml-1 h-4 w-4" /></Link>
             </Button>
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-            {workflows.map((w) => (
-              <WorkflowCard key={w.id} workflow={w} />
+            {workflows.map((w, i) => (
+              <WorkflowCard key={w.id} workflow={w} index={i} />
             ))}
           </div>
           <div className="text-center mt-8 sm:hidden">
-            <Button variant="outline" asChild>
-              <Link to="/workflows">View All Solutions</Link>
-            </Button>
+            <Button variant="outline" asChild><Link to="/workflows">View All Solutions</Link></Button>
           </div>
         </div>
       </section>
 
       {/* CTA */}
       <section className="py-20 px-4">
-        <div className="container mx-auto max-w-3xl">
-          <div className="rounded-3xl p-10 md:p-14 text-center relative overflow-hidden" style={{ background: "var(--gradient-hero)" }}>
+        <div className="container mx-auto max-w-4xl">
+          <div className="rounded-3xl p-10 md:p-16 text-center relative overflow-hidden" style={{ background: "var(--gradient-hero)" }}>
+            <div className="absolute inset-0 bg-grid opacity-10" />
             <div className="relative z-10">
-              <h2 className="font-display text-3xl md:text-4xl font-bold text-primary-foreground mb-4">Ready to Automate?</h2>
-              <p className="text-primary-foreground/80 mb-8 max-w-lg mx-auto">Let's build the perfect workflow for your business. Get a free consultation today.</p>
+              <h2 className="font-display text-3xl md:text-5xl font-bold text-primary-foreground mb-4">Ready to Transform Your Business?</h2>
+              <p className="text-primary-foreground/80 mb-8 max-w-lg mx-auto text-lg">Get a free consultation and let's build the perfect AI workflow for you.</p>
               <div className="flex flex-col sm:flex-row gap-3 justify-center">
-                <Button size="lg" variant="secondary" asChild>
-                  <Link to="/contact">Get Started Free</Link>
+                <Button size="lg" className="bg-card text-foreground hover:bg-card/90 shadow-lg" asChild>
+                  <Link to="/contact">Start Free Consultation</Link>
                 </Button>
                 <Button size="lg" variant="outline" className="border-primary-foreground/30 text-primary-foreground hover:bg-primary-foreground/10 hover:text-primary-foreground" asChild>
                   <a href="https://wa.me/923219088673" target="_blank" rel="noopener noreferrer">Chat on WhatsApp</a>
