@@ -90,7 +90,7 @@ export default function Index() {
           <div className="flex items-end justify-between mb-10">
             <div>
               <span className="text-xs font-bold uppercase tracking-widest text-secondary mb-2 block">Popular</span>
-              <h2 className="font-display text-3xl md:text-4xl font-bold">Featured Solutions</h2>
+              <h2 className="font-display text-3xl md:text-4xl font-bold">Featured n8n Workflows</h2>
             </div>
             <Button variant="ghost" asChild className="hidden sm:inline-flex">
               <Link to="/workflows">View All <ArrowRight className="ml-1 h-4 w-4" /></Link>

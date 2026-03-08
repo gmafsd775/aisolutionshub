@@ -7,7 +7,7 @@ import LoginModal from "./LoginModal";
 
 const NAV_LINKS = [
   { to: "/", label: "Home" },
-  { to: "/workflows", label: "Solutions" },
+  { to: "/workflows", label: "n8n Workflows" },
   { to: "/contact", label: "Contact" },
   { to: "/about", label: "About" },
 ];

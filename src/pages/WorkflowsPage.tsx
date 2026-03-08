@@ -10,8 +10,8 @@ export default function WorkflowsPage() {
     <div className="container mx-auto px-4 py-12">
       <div className="mb-10">
         <span className="text-xs font-bold uppercase tracking-widest text-accent mb-2 block">Browse</span>
-        <h1 className="font-display text-3xl md:text-5xl font-bold mb-3">AI Automation Solutions</h1>
-        <p className="text-muted-foreground text-lg max-w-xl">Ready-to-deploy n8n workflows designed to supercharge your operations.</p>
+        <h1 className="font-display text-3xl md:text-5xl font-bold mb-3">n8n Workflows</h1>
+        <p className="text-muted-foreground text-lg max-w-xl">Ready-to-deploy n8n automation workflows designed to supercharge your operations.</p>
       </div>
 
       {authed && (
