@@ -67,25 +67,51 @@ export default function Index() {
       </section>
 
       {/* Features */}
-      <section className="py-20 px-4">
-        <div className="container mx-auto">
-          <div className="text-center mb-14">
-            <span className="text-xs font-bold uppercase tracking-widest text-neon-pink mb-2 block">Why Us</span>
-            <h2 className="font-display text-3xl md:text-4xl font-bold mb-3">Everything You Need to <span className="text-gradient-neon">Automate</span></h2>
-            <p className="text-muted-foreground max-w-xl mx-auto">From simple tasks to complex AI pipelines — we build it all.</p>
+      <section className="py-24 px-4 relative overflow-hidden">
+        {/* Subtle background glow */}
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[400px] rounded-full blur-[200px] opacity-15" style={{ background: "var(--gradient-hero)" }} />
+
+        <div className="container mx-auto relative z-10">
+          <div className="text-center mb-16">
+            <span className="text-xs font-bold uppercase tracking-[0.25em] text-neon-pink mb-3 block animate-fade-in">Why Us</span>
+            <h2 className="font-display text-3xl md:text-5xl font-bold mb-4">Everything You Need to <span className="text-gradient-neon">Automate</span></h2>
+            <p className="text-muted-foreground max-w-xl mx-auto text-base">From simple tasks to complex AI pipelines — we build it all.</p>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-5xl mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
             {[
-              { icon: Bot, title: "AI-Powered Flows", desc: "GPT, Claude, and other models integrated directly into your automation pipelines.", gradient: "var(--gradient-hero)", border: "hsl(270 100% 65% / 0.2)", iconColor: "text-neon-purple" },
-              { icon: Shield, title: "Battle-Tested", desc: "Every workflow is rigorously tested with error handling and monitoring built in.", gradient: "var(--gradient-cool)", border: "hsl(185 100% 55% / 0.2)", iconColor: "text-neon-cyan" },
-              { icon: Zap, title: "Rapid Delivery", desc: "Get your automation live within 24-48 hours with ongoing support included.", gradient: "var(--gradient-warm)", border: "hsl(330 100% 60% / 0.2)", iconColor: "text-neon-pink" },
-            ].map((f) => (
-              <div key={f.title} className="rounded-3xl bg-card p-8 shadow-card hover:shadow-card-hover transition-all duration-300 group hover:-translate-y-1" style={{ border: `1px solid ${f.border}` }}>
-                <div className="mb-6 h-14 w-14 rounded-2xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300" style={{ background: f.gradient, opacity: 0.15 }}>
-                  <f.icon className={`h-7 w-7 ${f.iconColor}`} />
+              { icon: Bot, title: "AI-Powered Flows", desc: "GPT, Claude, and other models integrated directly into your automation pipelines.", gradient: "var(--gradient-hero)", border: "hsl(270 100% 65%)", iconColor: "text-neon-purple", shadowColor: "hsl(270 100% 65% / 0.15)", number: "01" },
+              { icon: Shield, title: "Battle-Tested", desc: "Every workflow is rigorously tested with error handling and monitoring built in.", gradient: "var(--gradient-cool)", border: "hsl(185 100% 55%)", iconColor: "text-neon-cyan", shadowColor: "hsl(185 100% 55% / 0.15)", number: "02" },
+              { icon: Zap, title: "Rapid Delivery", desc: "Get your automation live within 24-48 hours with ongoing support included.", gradient: "var(--gradient-warm)", border: "hsl(330 100% 60%)", iconColor: "text-neon-pink", shadowColor: "hsl(330 100% 60% / 0.15)", number: "03" },
+            ].map((f, i) => (
+              <div
+                key={f.title}
+                className="relative rounded-3xl p-[1px] group hover:-translate-y-2 transition-all duration-500"
+                style={{
+                  background: `linear-gradient(160deg, ${f.border} / 0.3, transparent 50%)`,
+                }}
+              >
+                {/* Hover glow effect */}
+                <div className="absolute -inset-1 rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 blur-xl" style={{ background: f.shadowColor }} />
+                
+                <div className="relative rounded-3xl p-8 h-full" style={{ background: "var(--gradient-card)" }}>
+                  {/* Step number */}
+                  <span className="absolute top-6 right-6 font-display text-5xl font-extrabold opacity-[0.06] text-foreground select-none">{f.number}</span>
+                  
+                  {/* Icon with glow ring */}
+                  <div className="relative mb-7">
+                    <div className="h-14 w-14 rounded-2xl flex items-center justify-center relative overflow-hidden" style={{ background: `${f.border} / 0.1` }}>
+                      <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500" style={{ background: f.gradient, opacity: 0.15 }} />
+                      <f.icon className={`h-6 w-6 ${f.iconColor} relative z-10 group-hover:scale-110 transition-transform duration-300`} />
+                    </div>
+                    <div className="absolute -bottom-1 left-3 right-3 h-4 rounded-full blur-lg opacity-0 group-hover:opacity-60 transition-opacity duration-500" style={{ background: f.border }} />
+                  </div>
+
+                  <h3 className="font-display font-bold text-xl mb-3 text-foreground group-hover:text-gradient transition-colors duration-300">{f.title}</h3>
+                  <p className="text-sm text-muted-foreground leading-relaxed">{f.desc}</p>
+                  
+                  {/* Bottom accent line */}
+                  <div className="mt-6 h-[2px] w-12 rounded-full opacity-40 group-hover:w-full group-hover:opacity-80 transition-all duration-500" style={{ background: f.gradient }} />
                 </div>
-                <h3 className="font-display font-bold text-lg mb-2 text-foreground">{f.title}</h3>
-                <p className="text-sm text-muted-foreground leading-relaxed">{f.desc}</p>
               </div>
             ))}
           </div>
