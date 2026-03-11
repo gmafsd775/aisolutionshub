@@ -52,7 +52,7 @@ export default function Index() {
           {/* Stats */}
           <div className="grid grid-cols-3 gap-4 mt-16 max-w-md mx-auto animate-slide-up" style={{ animationDelay: "0.35s" }}>
             {[
-              { value: "50+", label: "Workflows", icon: Rocket, borderColor: "hsl(270 100% 65% / 0.3)", glowColor: "shadow-glow" },
+              { value: `${workflows.length}+`, label: "Workflows", icon: Rocket, borderColor: "hsl(270 100% 65% / 0.3)", glowColor: "shadow-glow" },
               { value: "98%", label: "Happy Clients", icon: Star, borderColor: "hsl(330 100% 60% / 0.3)", glowColor: "shadow-glow-accent" },
               { value: "24h", label: "Delivery", icon: TrendingUp, borderColor: "hsl(185 100% 55% / 0.3)", glowColor: "shadow-glow-cyan" },
             ].map((s) => (
