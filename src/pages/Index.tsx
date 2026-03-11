@@ -8,9 +8,13 @@ import { Workflow } from "@/lib/types";
 
 export default function Index() {
   const [workflows, setWorkflows] = useState<Workflow[]>([]);
+  const [allCount, setAllCount] = useState(0);
 
   useEffect(() => {
-    getWorkflows().then((data) => setWorkflows(data.slice(0, 4)));
+    getWorkflows().then((data) => {
+      setAllCount(data.length);
+      setWorkflows(data.slice(0, 4));
+    });
   }, []);
 
   return (
