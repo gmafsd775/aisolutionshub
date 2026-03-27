@@ -4,6 +4,7 @@ import { getSession } from "@/lib/store";
 import WorkflowCard from "@/components/WorkflowCard";
 import OwnerDashboard from "@/components/OwnerDashboard";
 import { Workflow } from "@/lib/types";
+import SEOHead from "@/components/SEOHead";
 
 export default function WorkflowsPage() {
   const [workflows, setWorkflows] = useState<Workflow[]>([]);
@@ -16,6 +17,12 @@ export default function WorkflowsPage() {
 
   return (
     <div className="container mx-auto px-4 py-12">
+      <SEOHead
+        title="n8n Automation Workflows — Ready-to-Deploy AI Solutions"
+        description="Browse custom n8n automation workflows with AI integration. Ready-to-deploy solutions for lead generation, customer onboarding, data processing, and more."
+        path="/workflows"
+        keywords="n8n workflows, automation templates, AI workflows, business automation, workflow marketplace"
+      />
       <div className="mb-10">
         <span className="text-xs font-bold uppercase tracking-widest text-neon-pink mb-2 block">Browse</span>
         <h1 className="font-display text-3xl md:text-5xl font-bold mb-3">n8n <span className="text-gradient-cool">Workflows</span></h1>

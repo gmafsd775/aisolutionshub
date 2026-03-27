@@ -1,5 +1,6 @@
 import { Code2, Zap, Globe, BarChart3, Bot, Layers, Sparkles } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
+import SEOHead from "@/components/SEOHead";
 
 const SKILLS = [
   { icon: Bot, label: "AI Automation", gradient: "var(--gradient-hero)", border: "hsl(270 100% 65% / 0.2)", iconColor: "text-neon-purple" },
@@ -13,6 +14,12 @@ const SKILLS = [
 export default function AboutPage() {
   return (
     <div className="container mx-auto px-4 py-12 max-w-3xl">
+      <SEOHead
+        title="About Ahmed — AI & n8n Automation Expert | AI Solutions"
+        description="Meet Ahmed, the AI and automation specialist behind AI Solutions. Expert in n8n workflows, GPT integration, API automation, and digital marketing."
+        path="/about"
+        keywords="Ahmed automation expert, n8n specialist, AI developer, automation freelancer"
+      />
       <div className="mb-10">
         <span className="text-xs font-bold uppercase tracking-widest text-neon-pink mb-2 block">About</span>
         <h1 className="font-display text-3xl md:text-5xl font-bold mb-3">Meet <span className="text-gradient">Ahmed</span></h1>
