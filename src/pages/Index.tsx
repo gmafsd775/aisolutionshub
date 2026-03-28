@@ -21,8 +21,8 @@ export default function Index() {
   return (
     <div>
       <SEOHead
-        title="AI Solutions — Custom n8n Automation Workflows & AI Integration"
-        description="Custom AI-powered n8n automation workflows. Automate your business, boost productivity with GPT & Claude AI integrations. Fast 24h delivery by Ahmed."
+        title="AI Solutions — n8n Automation & AI Workflows"
+        description="Custom n8n automation workflows powered by AI. Automate your business with GPT and Claude integrations. 24h delivery, 100% satisfaction guaranteed."
         path="/"
         keywords="n8n automation, AI workflows, business automation, GPT integration, custom workflows, AI solutions"
       />
@@ -31,10 +31,8 @@ export default function Index() {
       <section className="relative py-24 md:py-40 px-4 overflow-hidden">
         <div className="absolute inset-0 bg-grid opacity-40" />
         {/* Animated neon orbs */}
-        <div className="absolute top-10 left-[10%] w-80 h-80 rounded-full blur-[140px] opacity-50 animate-pulse-neon" style={{ background: "hsl(270 100% 65%)" }} />
-        <div className="absolute bottom-0 right-[15%] w-96 h-96 rounded-full blur-[160px] opacity-35 animate-pulse-neon" style={{ background: "hsl(330 100% 60%)", animationDelay: "1s" }} />
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] rounded-full blur-[180px] opacity-20 animate-pulse-neon" style={{ background: "hsl(185 100% 55%)", animationDelay: "0.5s" }} />
-        <div className="absolute top-[20%] right-[5%] w-40 h-40 rounded-full blur-[100px] opacity-30" style={{ background: "hsl(150 100% 50%)" }} />
+        <div className="absolute top-10 left-[10%] w-60 h-60 rounded-full blur-[100px] opacity-40" style={{ background: "hsl(270 100% 65%)" }} />
+        <div className="absolute bottom-0 right-[15%] w-72 h-72 rounded-full blur-[120px] opacity-30" style={{ background: "hsl(330 100% 60%)" }} />
 
         <div className="container mx-auto text-center max-w-4xl relative z-10">
           <div className="inline-flex items-center gap-2 rounded-full neon-border bg-card/60 backdrop-blur-sm px-5 py-2.5 text-sm mb-8 animate-fade-in shadow-card">
@@ -239,6 +237,34 @@ export default function Index() {
               </div>
             </div>
           </div>
+        </div>
+      </section>
+
+      {/* Internal Links Section for SEO */}
+      <section className="py-16 px-4">
+        <div className="container mx-auto max-w-5xl">
+          <nav aria-label="Quick links" className="grid grid-cols-2 md:grid-cols-4 gap-4">
+            <Link to="/workflows" className="rounded-2xl p-5 text-center group hover:-translate-y-1 transition-all duration-300" style={{ background: "var(--gradient-card)", border: "1px solid hsl(270 100% 65% / 0.15)" }}>
+              <Zap className="h-6 w-6 text-neon-purple mx-auto mb-2" />
+              <span className="font-display font-semibold text-sm text-foreground">All Workflows</span>
+              <p className="text-xs text-muted-foreground mt-1">Browse our automation library</p>
+            </Link>
+            <Link to="/contact" className="rounded-2xl p-5 text-center group hover:-translate-y-1 transition-all duration-300" style={{ background: "var(--gradient-card)", border: "1px solid hsl(185 100% 55% / 0.15)" }}>
+              <Shield className="h-6 w-6 text-neon-cyan mx-auto mb-2" />
+              <span className="font-display font-semibold text-sm text-foreground">Get in Touch</span>
+              <p className="text-xs text-muted-foreground mt-1">Free consultation available</p>
+            </Link>
+            <Link to="/about" className="rounded-2xl p-5 text-center group hover:-translate-y-1 transition-all duration-300" style={{ background: "var(--gradient-card)", border: "1px solid hsl(330 100% 60% / 0.15)" }}>
+              <Bot className="h-6 w-6 text-neon-pink mx-auto mb-2" />
+              <span className="font-display font-semibold text-sm text-foreground">About Ahmed</span>
+              <p className="text-xs text-muted-foreground mt-1">Learn about our expertise</p>
+            </Link>
+            <a href="https://wa.me/923219088673" target="_blank" rel="noopener noreferrer" className="rounded-2xl p-5 text-center group hover:-translate-y-1 transition-all duration-300" style={{ background: "var(--gradient-card)", border: "1px solid hsl(150 100% 50% / 0.15)" }}>
+              <Rocket className="h-6 w-6 text-neon-green mx-auto mb-2" />
+              <span className="font-display font-semibold text-sm text-foreground">WhatsApp</span>
+              <p className="text-xs text-muted-foreground mt-1">Chat with us directly</p>
+            </a>
+          </nav>
         </div>
       </section>
     </div>
