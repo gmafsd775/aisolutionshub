@@ -79,8 +79,8 @@ export default function Index() {
       {/* Video Showcase */}
       <section className="py-16 px-4">
         <div className="container mx-auto max-w-3xl text-center">
-          <span className="text-xs font-bold uppercase tracking-[0.25em] text-neon-cyan mb-3 block">See Us in Action</span>
-          <h2 className="font-display text-3xl md:text-4xl font-bold mb-8">Watch How We <span className="text-gradient-cool">Automate</span></h2>
+          <span className="text-xs font-bold uppercase tracking-[0.25em] text-neon-cyan mb-3 block">AI in Action</span>
+          <h2 className="font-display text-3xl md:text-4xl font-bold mb-8">See <span className="text-gradient-cool">AI-Powered</span> Automation at Work</h2>
           <div className="relative w-full rounded-2xl overflow-hidden neon-border" style={{ paddingBottom: "56.1%", background: "var(--gradient-card)" }}>
             <iframe
               src="https://www.facebook.com/plugins/video.php?height=314&href=https%3A%2F%2Fwww.facebook.com%2Freel%2F920757747602764%2F&show_text=false&width=560&t=0"
