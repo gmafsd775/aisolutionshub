@@ -26,7 +26,7 @@ export default function SEOHead({ title, description, path = "/", keywords }: SE
     if (keywords) setMeta("keywords", keywords);
     setMeta("og:title", title, true);
     setMeta("og:description", description, true);
-    setMeta("og:url", `https://aisolutionshub.lovable.app${path}`, true);
+    setMeta("og:url", `https://www.damha577.online${path}`, true);
     setMeta("twitter:title", title);
     setMeta("twitter:description", description);
 
@@ -36,7 +36,7 @@ export default function SEOHead({ title, description, path = "/", keywords }: SE
       link.rel = "canonical";
       document.head.appendChild(link);
     }
-    link.href = `https://aisolutionshub.lovable.app${path}`;
+    link.href = `https://www.damha577.online${path}`;
   }, [title, description, path, keywords]);
 
   return null;
