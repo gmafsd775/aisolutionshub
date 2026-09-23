@@ -13,4 +13,4 @@ Allow: /
 User-agent: *
 Allow: /
 
-Sitemap: https://aisolutionshub.lovable.app/sitemap.xml
+Sitemap: https://www.damha577.online/sitemap.xml
