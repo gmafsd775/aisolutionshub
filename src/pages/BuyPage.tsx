@@ -101,7 +101,7 @@ export default function BuyPage() {
                 <ExternalLink className="h-4 w-4" /> Buy on Upwork
               </Button>
             </a>
-            <a href="https://wa.me/923219088673" target="_blank" rel="noopener noreferrer">
+            <a href="https://wa.me/923038179623" target="_blank" rel="noopener noreferrer">
               <Button className="w-full gap-2 bg-whatsapp hover:bg-whatsapp/90 text-primary-foreground rounded-xl h-12">
                 <MessageCircle className="h-4 w-4" /> WhatsApp
               </Button>

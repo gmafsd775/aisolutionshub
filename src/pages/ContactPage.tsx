@@ -68,9 +68,9 @@ export default function ContactPage() {
           <Card className="border-0 shadow-card rounded-2xl neon-border-cyan">
             <CardContent className="p-6 space-y-3">
               <h2 className="font-display font-bold text-lg mb-2 text-foreground">Direct Channels</h2>
-              <a href="https://wa.me/923219088673" target="_blank" rel="noopener noreferrer">
+              <a href="https://wa.me/923038179623" target="_blank" rel="noopener noreferrer">
                 <Button variant="outline" className="w-full gap-2 justify-start mb-2 h-12">
-                  <MessageCircle className="h-5 w-5 text-neon-green" /> WhatsApp: +923219088673
+                  <MessageCircle className="h-5 w-5 text-neon-green" /> WhatsApp: +923038179623
                 </Button>
               </a>
               <a href="https://www.fiverr.com/s/pdRm5pG" target="_blank" rel="noopener noreferrer">

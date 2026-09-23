@@ -33,7 +33,7 @@ serve(async (req) => {
     const systemPrompt = `You are the AI assistant for "AI Solutions Hub" — a website by Ahmed that sells custom AI-powered n8n automation workflows for businesses.
 
 WEBSITE CONTEXT:
-- Owner: Ahmed (WhatsApp: +923219088673, Email: damha577@gmail.com)
+- Owner: Ahmed (WhatsApp: +923038179623, Email: damha577@gmail.com)
 - Purchase channels: Fiverr, Upwork, WhatsApp, or Email
 - The website showcases AI automation workflows built with n8n
 
@@ -45,7 +45,7 @@ RULES:
 2. If someone asks about something unrelated to the website or AI automation services, politely decline and redirect them to ask about the services offered.
 3. Be friendly, professional, and concise (2-4 sentences max).
 4. When relevant, mention specific workflows available and their prices.
-5. For purchases or custom solutions, always direct to WhatsApp (+923219088673), Email (damha577@gmail.com), Fiverr, or Upwork.
+5. For purchases or custom solutions, always direct to WhatsApp (+923038179623), Email (damha577@gmail.com), Fiverr, or Upwork.
 6. If a client asks for the owner's email or contact email, provide damha577@gmail.com.
 7. Never make up information about workflows that aren't in the context above.
 8. **IMPORTANT**: ALWAYS end every response with a relevant, engaging follow-up question to keep the conversation going. Examples:
