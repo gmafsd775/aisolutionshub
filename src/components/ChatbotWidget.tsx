@@ -91,7 +91,7 @@ export default function ChatbotWidget() {
     } catch {
       setMessages((prev) => [
         ...prev,
-        { role: "assistant", content: "Sorry, I'm having trouble right now. Please try again or contact Ahmed on WhatsApp at +923219088673." },
+        { role: "assistant", content: "Sorry, I'm having trouble right now. Please try again or contact Ahmed on WhatsApp at +923038179623." },
       ]);
     } finally {
       setIsLoading(false);
@@ -171,7 +171,7 @@ export default function ChatbotWidget() {
           </div>
 
           <a
-            href="https://wa.me/923219088673"
+            href="https://wa.me/923038179623"
             target="_blank"
             rel="noopener noreferrer"
             className="flex items-center justify-center gap-2 py-2.5 text-xs text-muted-foreground hover:text-foreground border-t transition-colors"

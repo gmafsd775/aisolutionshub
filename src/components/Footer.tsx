@@ -40,7 +40,7 @@ export default function Footer() {
               <a href="https://www.upwork.com/freelancers/~015ab5cef27524deca" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-muted-foreground hover:text-neon-green transition-colors">
                 <ExternalLink className="h-3.5 w-3.5" /> Upwork
               </a>
-              <a href="https://wa.me/923219088673" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-muted-foreground hover:text-neon-green transition-colors">
+              <a href="https://wa.me/923038179623" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-muted-foreground hover:text-neon-green transition-colors">
                 <MessageCircle className="h-3.5 w-3.5" /> WhatsApp
               </a>
             </div>
