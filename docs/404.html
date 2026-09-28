@@ -1,0 +1,17 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="robots" content="noindex" />
+<title>Redirecting… | AI Solutions</title>
+<script>
+(function () {
+  var p = location.pathname + location.search + location.hash;
+  var ok = p.charAt(0) === "/" && p.indexOf("//") === -1 && p.indexOf("\\") === -1 && !/^\/?[a-z]+:/i.test(p);
+  if (ok) { try { sessionStorage.setItem("spa-redirect", p); } catch (e) {} }
+  location.replace("/index.html");
+})();
+</script>
+</head>
+<body></body>
+</html>

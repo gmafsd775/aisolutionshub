@@ -1,6 +1,7 @@
 import { Code2, Zap, Globe, BarChart3, Bot, Layers, Sparkles } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
 import SEOHead from "@/components/SEOHead";
+import Breadcrumbs from "@/components/Breadcrumbs";
 
 const SKILLS = [
   { icon: Bot, label: "AI Automation", gradient: "var(--gradient-hero)", border: "hsl(270 100% 65% / 0.2)", iconColor: "text-neon-purple" },
@@ -20,6 +21,7 @@ export default function AboutPage() {
         path="/about"
         keywords="Ahmed automation expert, n8n specialist, AI developer, automation freelancer"
       />
+      <Breadcrumbs label="About" path="/about" />
       <div className="mb-10">
         <span className="text-xs font-bold uppercase tracking-widest text-neon-pink mb-2 block">About</span>
         <h1 className="font-display text-3xl md:text-5xl font-bold mb-3">Meet <span className="text-gradient">Ahmed</span></h1>
