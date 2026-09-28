@@ -1,4 +1,5 @@
 User-agent: *
 Allow: /
+Disallow: /buy/
 
-Sitemap: https://www.damha577.online/sitemap.xml
+Sitemap: https://damha577.online/sitemap.xml

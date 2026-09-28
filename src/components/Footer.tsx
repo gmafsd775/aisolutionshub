@@ -19,7 +19,7 @@ export default function Footer() {
             </p>
           </div>
           <div>
-            <h4 className="font-display font-semibold mb-4 text-xs uppercase tracking-widest text-neon-cyan">Pages</h4>
+            <h2 className="font-display font-semibold mb-4 text-xs uppercase tracking-widest text-neon-cyan">Pages</h2>
             <div className="flex flex-col gap-2.5 text-sm">
               {[
                 { to: "/", label: "Home" },
@@ -32,7 +32,7 @@ export default function Footer() {
             </div>
           </div>
           <div>
-            <h4 className="font-display font-semibold mb-4 text-xs uppercase tracking-widest text-neon-pink">Connect</h4>
+            <h2 className="font-display font-semibold mb-4 text-xs uppercase tracking-widest text-neon-pink">Connect</h2>
             <div className="flex flex-col gap-2.5 text-sm">
               <a href="https://www.fiverr.com/s/pdRm5pG" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-muted-foreground hover:text-neon-green transition-colors">
                 <ExternalLink className="h-3.5 w-3.5" /> Fiverr

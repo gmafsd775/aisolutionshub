@@ -102,6 +102,7 @@ export default function ChatbotWidget() {
     <>
       <button
         onClick={() => setOpen(!open)}
+        aria-label={open ? "Close chat assistant" : "Open chat assistant"}
         className="fixed bottom-6 right-6 z-50 h-14 w-14 rounded-2xl shadow-glow flex items-center justify-center transition-all duration-300 hover:scale-110 active:scale-95 animate-pulse-glow"
         style={{ background: "var(--gradient-hero)" }}
       >
@@ -159,13 +160,14 @@ export default function ChatbotWidget() {
           <div className="border-t px-3 py-3 flex gap-2">
             <Input
               placeholder="Type a message..."
+              aria-label="Type your message"
               value={input}
               onChange={(e) => setInput(e.target.value)}
               onKeyDown={(e) => e.key === "Enter" && sendMessage(input)}
               disabled={isLoading}
               className="text-sm border-0 bg-muted/50 rounded-xl"
             />
-            <Button size="icon" variant="hero" onClick={() => sendMessage(input)} disabled={isLoading} className="rounded-xl flex-shrink-0">
+            <Button size="icon" variant="hero" aria-label="Send message" onClick={() => sendMessage(input)} disabled={isLoading} className="rounded-xl flex-shrink-0">
               <Send className="h-4 w-4" />
             </Button>
           </div>

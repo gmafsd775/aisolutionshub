@@ -3,7 +3,8 @@ import { Link, useLocation } from "react-router-dom";
 import { Menu, X, LogIn, LogOut, Bot } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { getSession, signOut } from "@/lib/store";
-import LoginModal from "./LoginModal";
+import { lazy, Suspense } from "react";
+const LoginModal = lazy(() => import("./LoginModal"));
 
 const NAV_LINKS = [
   { to: "/", label: "Home" },
@@ -52,11 +53,11 @@ export default function Navbar() {
             {authed ? (
               <Button variant="ghost" size="sm" onClick={handleLogout} className="ml-3 gap-2"><LogOut className="h-4 w-4" /> Logout</Button>
             ) : (
-              <Button variant="hero" size="sm" onClick={() => setLoginOpen(true)} className="ml-3 gap-2"><LogIn className="h-4 w-4" /> Owner</Button>
+              <Button variant="hero" size="sm" onClick={() => setLoginOpen(true)} aria-label="Open owner login" className="ml-3 gap-2"><LogIn className="h-4 w-4" /> Owner</Button>
             )}
           </div>
 
-          <button className="md:hidden p-2 rounded-xl hover:bg-muted transition-colors" onClick={() => setMobileOpen(!mobileOpen)}>
+          <button aria-label={mobileOpen ? "Close menu" : "Open menu"} aria-expanded={mobileOpen} className="md:hidden p-3 rounded-xl hover:bg-muted transition-colors" onClick={() => setMobileOpen(!mobileOpen)}>
             {mobileOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
           </button>
         </div>
@@ -73,12 +74,12 @@ export default function Navbar() {
             {authed ? (
               <Button variant="ghost" size="sm" onClick={handleLogout} className="mt-2 w-full gap-2"><LogOut className="h-4 w-4" /> Logout</Button>
             ) : (
-              <Button variant="hero" size="sm" onClick={() => { setLoginOpen(true); setMobileOpen(false); }} className="mt-2 w-full gap-2"><LogIn className="h-4 w-4" /> Owner</Button>
+              <Button variant="hero" size="sm" aria-label="Open owner login" onClick={() => { setLoginOpen(true); setMobileOpen(false); }} className="mt-2 w-full gap-2"><LogIn className="h-4 w-4" /> Owner</Button>
             )}
           </div>
         )}
       </nav>
-      <LoginModal open={loginOpen} onClose={() => setLoginOpen(false)} />
+      {loginOpen && <Suspense fallback={null}><LoginModal open={loginOpen} onClose={() => setLoginOpen(false)} /></Suspense>}
     </>
   );
 }
