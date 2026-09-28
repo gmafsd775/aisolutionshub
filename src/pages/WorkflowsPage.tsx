@@ -5,6 +5,7 @@ import WorkflowCard from "@/components/WorkflowCard";
 import OwnerDashboard from "@/components/OwnerDashboard";
 import { Workflow } from "@/lib/types";
 import SEOHead from "@/components/SEOHead";
+import Breadcrumbs from "@/components/Breadcrumbs";
 
 export default function WorkflowsPage() {
   const [workflows, setWorkflows] = useState<Workflow[]>([]);
@@ -23,6 +24,7 @@ export default function WorkflowsPage() {
         path="/workflows"
         keywords="n8n workflows, automation templates, AI workflows, business automation, workflow marketplace"
       />
+      <Breadcrumbs label="n8n Workflows" path="/workflows" />
       <div className="mb-10">
         <span className="text-xs font-bold uppercase tracking-widest text-neon-pink mb-2 block">Browse</span>
         <h1 className="font-display text-3xl md:text-5xl font-bold mb-3">n8n <span className="text-gradient-cool">Workflows</span></h1>

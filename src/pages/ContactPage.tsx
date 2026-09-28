@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Mail, MessageCircle, ExternalLink, Clock, Send, Sparkles } from "lucide-react";
 import SEOHead from "@/components/SEOHead";
+import Breadcrumbs from "@/components/Breadcrumbs";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
@@ -41,6 +42,7 @@ export default function ContactPage() {
         path="/contact"
         keywords="contact AI solutions, automation consultation, n8n developer, hire automation expert"
       />
+      <Breadcrumbs label="Contact" path="/contact" />
       <div className="mb-10">
         <span className="text-xs font-bold uppercase tracking-widest text-neon-cyan mb-2 block">Reach Out</span>
         <h1 className="font-display text-3xl md:text-5xl font-bold mb-3">Let's Build Something <span className="text-gradient">Great</span></h1>
