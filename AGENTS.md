@@ -1,0 +1,2 @@
+- Publish flow: `vite build` then `python3 scripts/prerender.py` (snapshots /, /workflows, /contact, /about into dist), then copy dist → docs/ for GitHub Pages. Why: GitHub Pages has no SPA fallback, so each main page needs a real HTML file.
+- Canonical domain is https://damha577.online (non-www) everywhere; CNAME = damha577.online. Why: owner's SEO decision.
