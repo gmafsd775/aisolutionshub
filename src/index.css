@@ -130,7 +130,7 @@
     background-size: 48px 48px;
   }
   .glass {
-    background: hsl(230 20% 7% / 0.8);
+    background: hsl(230 20% 7% / 0.92);
     backdrop-filter: blur(20px);
     -webkit-backdrop-filter: blur(20px);
     border-bottom: 1px solid hsl(270 100% 65% / 0.1);
@@ -154,4 +154,10 @@
     background: var(--gradient-hero);
     box-shadow: 0 0 12px 2px hsl(270 100% 65% / 0.4);
   }
+}
+
+@layer utilities {
+  .nav-active-text { color: hsl(270 100% 80%); }
+  .hero-fast { animation-duration: 100ms !important; }
+  @media (max-width: 768px) { .hero-fast { animation: none !important; opacity: 1 !important; transform: none !important; } }
 }

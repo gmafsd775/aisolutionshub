@@ -45,7 +45,7 @@ export default function Navbar() {
               <Link key={link.to} to={link.to}
                 className={`px-4 py-2 rounded-xl text-sm font-medium transition-all duration-200 ${
                   location.pathname === link.to
-                    ? "bg-primary/15 text-primary font-semibold neon-border"
+                    ? "bg-primary/15 nav-active-text font-semibold neon-border"
                     : "text-muted-foreground hover:text-foreground hover:bg-muted/60"
                 }`}
               >{link.label}</Link>
@@ -67,7 +67,7 @@ export default function Navbar() {
             {NAV_LINKS.map((link) => (
               <Link key={link.to} to={link.to} onClick={() => setMobileOpen(false)}
                 className={`block px-4 py-3 rounded-xl text-sm font-medium transition-colors ${
-                  location.pathname === link.to ? "bg-primary/15 text-primary neon-border" : "text-muted-foreground"
+                  location.pathname === link.to ? "bg-primary/15 nav-active-text neon-border" : "text-muted-foreground"
                 }`}
               >{link.label}</Link>
             ))}
