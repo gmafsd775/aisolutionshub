@@ -41,7 +41,7 @@ export default function Index() {
             <span className="h-2 w-2 rounded-full bg-neon-green animate-pulse" />
           </div>
 
-          <h1 className="font-display text-5xl md:text-7xl lg:text-8xl font-extrabold tracking-tight mb-6 animate-slide-up leading-[1.05]">
+          <h1 className="font-display text-5xl md:text-7xl lg:text-8xl font-extrabold tracking-tight mb-6 animate-slide-up hero-fast leading-[1.05]">
             Smarter Work with{" "}
             <span className="text-gradient">AI Solutions</span>
           </h1>

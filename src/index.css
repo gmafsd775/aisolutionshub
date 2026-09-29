@@ -155,3 +155,9 @@
     box-shadow: 0 0 12px 2px hsl(270 100% 65% / 0.4);
   }
 }
+
+@layer utilities {
+  .nav-active-text { color: hsl(270 100% 80%); }
+  .hero-fast { animation-duration: 100ms !important; }
+  @media (max-width: 768px) { .hero-fast { animation: none !important; opacity: 1 !important; transform: none !important; } }
+}
