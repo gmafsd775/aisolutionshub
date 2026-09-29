@@ -13,7 +13,7 @@ const BuyPage = lazy(() => import("./pages/BuyPage"));
 const ContactPage = lazy(() => import("./pages/ContactPage"));
 const AboutPage = lazy(() => import("./pages/AboutPage"));
 const NotFound = lazy(() => import("./pages/NotFound"));
-const ChatbotWidget = lazy(() => import("./components/ChatbotWidget"));
+import ChatLauncher from "./components/ChatLauncher";
 
 const queryClient = new QueryClient();
 
@@ -38,9 +38,7 @@ const App = () => (
             </Suspense>
           </main>
           <Footer />
-          <Suspense fallback={null}>
-            <ChatbotWidget />
-          </Suspense>
+          <ChatLauncher />
         </div>
       </BrowserRouter>
     </TooltipProvider>
