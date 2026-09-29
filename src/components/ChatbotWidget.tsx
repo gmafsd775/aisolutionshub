@@ -1,5 +1,5 @@
 import { useState, useRef, useEffect } from "react";
-import { MessageCircle, X, Send, ExternalLink, Bot, Loader2 } from "lucide-react";
+import { Send, ExternalLink, Bot, Loader2 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 
@@ -14,8 +14,7 @@ const QUICK_REPLIES = [
 
 interface Msg { role: "user" | "assistant"; content: string; }
 
-export default function ChatbotWidget() {
-  const [open, setOpen] = useState(false);
+export default function ChatbotWidget({ open }: { open: boolean }) {
   const [messages, setMessages] = useState<Msg[]>([
     { role: "assistant", content: "Hi! 👋 I'm the AI Solutions Hub assistant. Ask me anything about our automation workflows!" },
   ]);
@@ -100,15 +99,6 @@ export default function ChatbotWidget() {
 
   return (
     <>
-      <button
-        onClick={() => setOpen(!open)}
-        aria-label={open ? "Close chat assistant" : "Open chat assistant"}
-        className="fixed bottom-6 right-6 z-50 h-14 w-14 rounded-2xl shadow-glow flex items-center justify-center transition-all duration-300 hover:scale-110 active:scale-95 animate-pulse-glow"
-        style={{ background: "var(--gradient-hero)" }}
-      >
-        {open ? <X className="h-5 w-5 text-primary-foreground" /> : <MessageCircle className="h-5 w-5 text-primary-foreground" />}
-      </button>
-
       {open && (
         <div className="fixed bottom-24 right-6 z-50 w-80 sm:w-96 rounded-3xl border-0 bg-card shadow-2xl flex flex-col max-h-[30rem] animate-fade-in overflow-hidden">
           <div className="px-5 py-4 flex items-center gap-3" style={{ background: "var(--gradient-hero)" }}>
