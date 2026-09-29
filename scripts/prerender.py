@@ -21,3 +21,11 @@ async def main():
     finally:
         srv.terminate()
 asyncio.run(main())
+# Stamp sitemap with the real build date
+import datetime, re
+_sm=DIST/"sitemap.xml"
+if _sm.exists():
+    _d=datetime.date.today().isoformat()
+    _t=re.sub(r"\s*<lastmod>[^<]*</lastmod>","",_sm.read_text())
+    _sm.write_text(re.sub(r"(</loc>)",r"\1\n    <lastmod>"+_d+"</lastmod>",_t))
+    print("sitemap lastmod",_d)

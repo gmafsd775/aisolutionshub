@@ -31,7 +31,17 @@ export default function WorkflowCard({ workflow, index = 0 }: Props) {
     <Card className="overflow-hidden shadow-card hover:shadow-card-hover transition-all duration-400 group border-0 hover:-translate-y-1" style={{ border: `1px solid ${borderColor}`, background: "var(--gradient-card)" }}>
       <div className="aspect-[16/10] relative flex items-center justify-center overflow-hidden bg-muted/30">
         {workflow.imageUrl ? (
-          <img src={workflow.imageUrl} alt={workflow.title} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+          <img
+            src={workflow.imageUrl.includes("/storage/v1/object/public/")
+              ? workflow.imageUrl.replace("/storage/v1/object/public/", "/storage/v1/render/image/public/") + "?width=600&quality=75"
+              : workflow.imageUrl}
+            alt={workflow.title}
+            width={600}
+            height={375}
+            loading="lazy"
+            decoding="async"
+            className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+          />
         ) : (
           <div className="flex flex-col items-center gap-3">
             <div className="h-16 w-16 rounded-2xl flex items-center justify-center animate-float" style={{ background: "var(--gradient-hero)", opacity: 0.2 }}>
