@@ -130,7 +130,7 @@
     background-size: 48px 48px;
   }
   .glass {
-    background: hsl(230 20% 7% / 0.8);
+    background: hsl(230 20% 7% / 0.92);
     backdrop-filter: blur(20px);
     -webkit-backdrop-filter: blur(20px);
     border-bottom: 1px solid hsl(270 100% 65% / 0.1);
