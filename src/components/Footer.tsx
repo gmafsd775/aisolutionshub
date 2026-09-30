@@ -23,9 +23,9 @@ export default function Footer() {
             <div className="flex flex-col gap-2.5 text-sm">
               {[
                 { to: "/", label: "Home" },
-                { to: "/workflows", label: "n8n Workflows" },
-                { to: "/contact", label: "Contact" },
-                { to: "/about", label: "About" },
+                { to: "/workflows/", label: "n8n Workflows" },
+                { to: "/contact/", label: "Contact" },
+                { to: "/about/", label: "About" },
               ].map((l) => (
                 <Link key={l.to} to={l.to} className="text-muted-foreground hover:text-neon-purple transition-colors">{l.label}</Link>
               ))}

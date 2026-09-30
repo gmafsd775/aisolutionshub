@@ -18,10 +18,10 @@ export default function AboutPage() {
       <SEOHead
         title="About Ahmed — AI & n8n Automation Expert | AI Solutions"
         description="Meet Ahmed, the AI and automation specialist behind AI Solutions. Expert in n8n workflows, GPT integration, API automation, and digital marketing."
-        path="/about"
+        path="/about/"
         keywords="Ahmed automation expert, n8n specialist, AI developer, automation freelancer"
       />
-      <Breadcrumbs label="About" path="/about" />
+      <Breadcrumbs label="About" path="/about/" />
       <div className="mb-10">
         <span className="text-xs font-bold uppercase tracking-widest text-neon-pink mb-2 block">About</span>
         <h1 className="font-display text-3xl md:text-5xl font-bold mb-3">Meet <span className="text-gradient">Ahmed</span></h1>

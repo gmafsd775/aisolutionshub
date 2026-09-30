@@ -39,10 +39,10 @@ export default function ContactPage() {
       <SEOHead
         title="Contact AI Solutions — Get a Free Automation Consultation"
         description="Get in touch with Ahmed for custom n8n automation workflows. Free consultation via WhatsApp, email, Fiverr, or Upwork. Fast 2-4 hour response time."
-        path="/contact"
+        path="/contact/"
         keywords="contact AI solutions, automation consultation, n8n developer, hire automation expert"
       />
-      <Breadcrumbs label="Contact" path="/contact" />
+      <Breadcrumbs label="Contact" path="/contact/" />
       <div className="mb-10">
         <span className="text-xs font-bold uppercase tracking-widest text-neon-cyan mb-2 block">Reach Out</span>
         <h1 className="font-display text-3xl md:text-5xl font-bold mb-3">Let's Build Something <span className="text-gradient">Great</span></h1>

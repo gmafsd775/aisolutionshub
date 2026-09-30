@@ -1,6 +1,6 @@
 import asyncio, subprocess, time, pathlib, shutil
 from playwright.async_api import async_playwright
-ROUTES=["/","/workflows","/contact","/about"]
+ROUTES=["/","/workflows/","/contact/","/about/"]
 DIST=pathlib.Path("dist")
 async def main():
     srv=subprocess.Popen(["npx","vite","preview","--port","4173","--strictPort"],stdout=subprocess.DEVNULL,stderr=subprocess.DEVNULL)

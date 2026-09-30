@@ -34,7 +34,7 @@ export default function BuyPage() {
     return (
       <div className="container mx-auto px-4 py-20 text-center">
         <h2 className="font-display text-2xl font-bold mb-4">Solution not found</h2>
-        <Button asChild><Link to="/workflows">Back to Solutions</Link></Button>
+        <Button asChild><Link to="/workflows/">Back to Solutions</Link></Button>
       </div>
     );
   }
@@ -61,7 +61,7 @@ export default function BuyPage() {
   return (
     <div className="container mx-auto px-4 py-12 max-w-5xl">
       <Button variant="ghost" asChild className="mb-8">
-        <Link to="/workflows"><ArrowLeft className="mr-2 h-4 w-4" /> Back to Solutions</Link>
+        <Link to="/workflows/"><ArrowLeft className="mr-2 h-4 w-4" /> Back to Solutions</Link>
       </Button>
 
       <div className="grid md:grid-cols-5 gap-10">

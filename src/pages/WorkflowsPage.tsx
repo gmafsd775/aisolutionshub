@@ -21,10 +21,10 @@ export default function WorkflowsPage() {
       <SEOHead
         title="n8n Automation Workflows — Ready-to-Deploy AI Solutions"
         description="Browse custom n8n automation workflows with AI integration. Ready-to-deploy solutions for lead generation, customer onboarding, data processing, and more."
-        path="/workflows"
+        path="/workflows/"
         keywords="n8n workflows, automation templates, AI workflows, business automation, workflow marketplace"
       />
-      <Breadcrumbs label="n8n Workflows" path="/workflows" />
+      <Breadcrumbs label="n8n Workflows" path="/workflows/" />
       <div className="mb-10">
         <span className="text-xs font-bold uppercase tracking-widest text-neon-pink mb-2 block">Browse</span>
         <h1 className="font-display text-3xl md:text-5xl font-bold mb-3">n8n <span className="text-gradient-cool">Workflows</span></h1>

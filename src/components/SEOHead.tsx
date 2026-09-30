@@ -27,6 +27,7 @@ export default function SEOHead({ title, description, path = "/", keywords }: SE
     setMeta("og:title", title, true);
     setMeta("og:description", description, true);
     setMeta("og:url", `https://damha577.online${path}`, true);
+    setMeta("twitter:url", `https://damha577.online${path}`);
     setMeta("twitter:title", title);
     setMeta("twitter:description", description);
 
