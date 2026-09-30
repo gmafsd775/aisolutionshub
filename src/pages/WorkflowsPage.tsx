@@ -19,8 +19,8 @@ export default function WorkflowsPage() {
   return (
     <div className="container mx-auto px-4 py-12">
       <SEOHead
-        title="n8n Automation Workflows — Ready-to-Deploy AI Solutions"
-        description="Browse custom n8n automation workflows with AI integration. Ready-to-deploy solutions for lead generation, customer onboarding, data processing, and more."
+        title="n8n Workflow Templates | AI Solutions"
+        description="Browse ready-to-deploy n8n automation workflows for lead generation, customer onboarding, data processing, and more."
         path="/workflows/"
         keywords="n8n workflows, automation templates, AI workflows, business automation, workflow marketplace"
       />

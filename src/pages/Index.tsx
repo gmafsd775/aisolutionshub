@@ -21,8 +21,8 @@ export default function Index() {
   return (
     <div>
       <SEOHead
-        title="AI Solutions — n8n Automation & AI Workflows"
-        description="Custom n8n automation workflows powered by AI. Automate your business with GPT and Claude integrations. 24h delivery, 100% satisfaction guaranteed."
+        title="AI Automation & n8n Workflows | AI Solutions"
+        description="Custom n8n workflows and AI automation for businesses. GPT and Claude integrations, 24h delivery, 100% satisfaction."
         path="/"
         keywords="n8n automation, AI workflows, business automation, GPT integration, custom workflows, AI solutions"
       />

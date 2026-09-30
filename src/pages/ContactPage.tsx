@@ -37,8 +37,8 @@ export default function ContactPage() {
   return (
     <div className="container mx-auto px-4 py-12 max-w-4xl">
       <SEOHead
-        title="Contact AI Solutions — Get a Free Automation Consultation"
-        description="Get in touch with Ahmed for custom n8n automation workflows. Free consultation via WhatsApp, email, Fiverr, or Upwork. Fast 2-4 hour response time."
+        title="Contact AI Solutions | Get a Custom Automation Quote"
+        description="Contact us for custom n8n automation and AI workflow services. Free consultation, 24h response time."
         path="/contact/"
         keywords="contact AI solutions, automation consultation, n8n developer, hire automation expert"
       />
