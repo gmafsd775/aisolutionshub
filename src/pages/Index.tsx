@@ -22,7 +22,7 @@ export default function Index() {
     <div>
       <SEOHead
         title="AI Automation & n8n Workflows | AI Solutions"
-        description="Custom n8n workflows and AI automation for businesses. GPT and Claude integrations, 24h delivery, 100% satisfaction."
+        description="Expert n8n automation services for growing businesses. Custom AI workflows with GPT and Claude integrations, 24h delivery, and 100% satisfaction guaranteed."
         path="/"
         keywords="n8n automation, AI workflows, business automation, GPT integration, custom workflows, AI solutions"
       />
