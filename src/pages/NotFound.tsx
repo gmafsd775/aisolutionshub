@@ -3,9 +3,9 @@ import SEOHead from "@/components/SEOHead";
 
 const LINKS = [
   { to: "/", label: "Home page" },
-  { to: "/workflows", label: "Browse n8n workflows" },
-  { to: "/contact", label: "Contact Ahmed" },
-  { to: "/about", label: "About AI Solutions" },
+  { to: "/workflows/", label: "Browse n8n workflows" },
+  { to: "/contact/", label: "Contact Ahmed" },
+  { to: "/about/", label: "About AI Solutions" },
 ];
 
 const NotFound = () => (

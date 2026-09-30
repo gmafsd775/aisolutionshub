@@ -52,10 +52,10 @@ export default function Index() {
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center animate-slide-up" style={{ animationDelay: "0.2s" }}>
             <Button size="lg" variant="hero" asChild>
-              <Link to="/workflows">Explore Solutions <ArrowRight className="ml-1 h-4 w-4" /></Link>
+              <Link to="/workflows/">Explore Solutions <ArrowRight className="ml-1 h-4 w-4" /></Link>
             </Button>
             <Button size="lg" variant="outline" asChild>
-              <Link to="/contact">Free Consultation</Link>
+              <Link to="/contact/">Free Consultation</Link>
             </Button>
           </div>
 
@@ -176,7 +176,7 @@ export default function Index() {
               <h2 className="font-display text-3xl md:text-4xl font-bold">Featured <span className="text-gradient-cool">n8n Workflows</span></h2>
             </div>
             <Button variant="ghost" asChild className="hidden sm:inline-flex text-neon-cyan hover:text-neon-purple">
-              <Link to="/workflows">View All <ArrowRight className="ml-1 h-4 w-4" /></Link>
+              <Link to="/workflows/">View All <ArrowRight className="ml-1 h-4 w-4" /></Link>
             </Button>
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
@@ -185,7 +185,7 @@ export default function Index() {
             ))}
           </div>
           <div className="text-center mt-8 sm:hidden">
-            <Button variant="outline" asChild><Link to="/workflows">View All Solutions</Link></Button>
+            <Button variant="outline" asChild><Link to="/workflows/">View All Solutions</Link></Button>
           </div>
         </div>
       </section>
@@ -230,7 +230,7 @@ export default function Index() {
               <p className="text-primary-foreground/80 mb-8 max-w-lg mx-auto text-lg">Get a free consultation and let's build the perfect AI-powered n8n workflow for you.</p>
               <div className="flex flex-col sm:flex-row gap-3 justify-center">
                 <Button size="lg" className="bg-card text-foreground hover:bg-card/90 shadow-lg border border-primary/30" asChild>
-                  <Link to="/contact">Start Free Consultation</Link>
+                  <Link to="/contact/">Start Free Consultation</Link>
                 </Button>
                 <Button size="lg" variant="outline" className="border-primary-foreground/30 text-primary-foreground hover:bg-primary-foreground/10 hover:text-primary-foreground" asChild>
                   <a href="https://wa.me/923038179623" target="_blank" rel="noopener noreferrer">Chat on WhatsApp</a>
@@ -245,17 +245,17 @@ export default function Index() {
       <section className="py-16 px-4">
         <div className="container mx-auto max-w-5xl">
           <nav aria-label="Quick links" className="grid grid-cols-2 md:grid-cols-4 gap-4">
-            <Link to="/workflows" className="rounded-2xl p-5 text-center group hover:-translate-y-1 transition-all duration-300" style={{ background: "var(--gradient-card)", border: "1px solid hsl(270 100% 65% / 0.15)" }}>
+            <Link to="/workflows/" className="rounded-2xl p-5 text-center group hover:-translate-y-1 transition-all duration-300" style={{ background: "var(--gradient-card)", border: "1px solid hsl(270 100% 65% / 0.15)" }}>
               <Zap className="h-6 w-6 text-neon-purple mx-auto mb-2" />
               <span className="font-display font-semibold text-sm text-foreground">All Workflows</span>
               <p className="text-xs text-muted-foreground mt-1">Browse our automation library</p>
             </Link>
-            <Link to="/contact" className="rounded-2xl p-5 text-center group hover:-translate-y-1 transition-all duration-300" style={{ background: "var(--gradient-card)", border: "1px solid hsl(185 100% 55% / 0.15)" }}>
+            <Link to="/contact/" className="rounded-2xl p-5 text-center group hover:-translate-y-1 transition-all duration-300" style={{ background: "var(--gradient-card)", border: "1px solid hsl(185 100% 55% / 0.15)" }}>
               <Shield className="h-6 w-6 text-neon-cyan mx-auto mb-2" />
               <span className="font-display font-semibold text-sm text-foreground">Get in Touch</span>
               <p className="text-xs text-muted-foreground mt-1">Free consultation available</p>
             </Link>
-            <Link to="/about" className="rounded-2xl p-5 text-center group hover:-translate-y-1 transition-all duration-300" style={{ background: "var(--gradient-card)", border: "1px solid hsl(330 100% 60% / 0.15)" }}>
+            <Link to="/about/" className="rounded-2xl p-5 text-center group hover:-translate-y-1 transition-all duration-300" style={{ background: "var(--gradient-card)", border: "1px solid hsl(330 100% 60% / 0.15)" }}>
               <Bot className="h-6 w-6 text-neon-pink mx-auto mb-2" />
               <span className="font-display font-semibold text-sm text-foreground">About Ahmed</span>
               <p className="text-xs text-muted-foreground mt-1">Learn about our expertise</p>
