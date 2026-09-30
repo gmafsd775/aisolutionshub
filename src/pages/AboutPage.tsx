@@ -17,7 +17,7 @@ export default function AboutPage() {
     <div className="container mx-auto px-4 py-12 max-w-3xl">
       <SEOHead
         title="About AI Solutions | n8n Automation Experts"
-        description="Learn about AI Solutions — specialists in n8n workflows, GPT integrations, and business process automation."
+        description="Learn about AI Solutions — specialists in n8n workflows, GPT integrations, and business process automation helping companies save time and scale faster."
         path="/about/"
         keywords="Ahmed automation expert, n8n specialist, AI developer, automation freelancer"
       />
