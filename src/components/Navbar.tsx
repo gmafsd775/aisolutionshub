@@ -51,8 +51,9 @@ export default function Navbar() {
                 }`}
               >{link.label}</Link>
             ))}
-            {authed ? (
-              <Button variant="ghost" size="sm" onClick={handleLogout} className="ml-3 gap-2"><LogOut className="h-4 w-4" /> Logout</Button>
+            {authed ? (<>
+              <Link to="/admin/blog" className="ml-3 text-sm text-muted-foreground hover:text-foreground">Manage blog</Link>
+              <Button variant="ghost" size="sm" onClick={handleLogout} className="ml-3 gap-2"><LogOut className="h-4 w-4" /> Logout</Button></>
             ) : (
               <Button variant="hero" size="sm" onClick={() => setLoginOpen(true)} aria-label="Open owner login" className="ml-3 gap-2"><LogIn className="h-4 w-4" /> Owner</Button>
             )}
