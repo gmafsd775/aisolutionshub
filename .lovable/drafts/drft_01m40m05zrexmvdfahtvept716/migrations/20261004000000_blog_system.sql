@@ -67,8 +67,6 @@ $$;
 GRANT EXECUTE ON FUNCTION public.get_preview_post(text) TO anon, authenticated;
 
 -- Cover image bucket
-INSERT INTO storage.buckets (id, name, public) VALUES ('blog-images', 'blog-images', true)
-ON CONFLICT (id) DO NOTHING;
 CREATE POLICY "Public read blog images" ON storage.objects FOR SELECT USING (bucket_id = 'blog-images');
 CREATE POLICY "Auth upload blog images" ON storage.objects FOR INSERT TO authenticated WITH CHECK (bucket_id = 'blog-images');
 CREATE POLICY "Auth update blog images" ON storage.objects FOR UPDATE TO authenticated USING (bucket_id = 'blog-images');
