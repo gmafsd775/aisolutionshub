@@ -6,6 +6,7 @@ import { getWorkflows } from "@/lib/store";
 import WorkflowCard from "@/components/WorkflowCard";
 import { Workflow } from "@/lib/types";
 import SEOHead from "@/components/SEOHead";
+import LatestPosts from "@/components/blog/LatestPosts";
 
 export default function Index() {
   const [workflows, setWorkflows] = useState<Workflow[]>([]);
@@ -240,6 +241,8 @@ export default function Index() {
           </div>
         </div>
       </section>
+
+      <LatestPosts />
 
       {/* Internal Links Section for SEO */}
       <section className="py-16 px-4">

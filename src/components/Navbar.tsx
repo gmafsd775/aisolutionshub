@@ -9,6 +9,7 @@ const LoginModal = lazy(() => import("./LoginModal"));
 const NAV_LINKS = [
   { to: "/", label: "Home" },
   { to: "/workflows/", label: "n8n Workflows" },
+  { to: "/blog/", label: "Blog" },
   { to: "/contact/", label: "Contact" },
   { to: "/about/", label: "About" },
 ];
