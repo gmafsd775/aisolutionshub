@@ -124,10 +124,10 @@ export async function createPreviewToken(postId: string): Promise<string> {
 
 export async function uploadCover(file: File): Promise<string> {
   const ext = file.name.split(".").pop()?.toLowerCase() || "jpg";
-  const path = `covers/${Date.now()}-${Math.random().toString(36).slice(2)}.${ext}`;
-  const { error } = await supabase.storage.from("blog-images").upload(path, file, { contentType: file.type });
+  const path = `blog-covers/${Date.now()}-${Math.random().toString(36).slice(2)}.${ext}`;
+  const { error } = await supabase.storage.from("workflow-media").upload(path, file, { contentType: file.type });
   if (error) throw error;
-  return supabase.storage.from("blog-images").getPublicUrl(path).data.publicUrl;
+  return supabase.storage.from("workflow-media").getPublicUrl(path).data.publicUrl;
 }
 
 export async function triggerRebuild() {

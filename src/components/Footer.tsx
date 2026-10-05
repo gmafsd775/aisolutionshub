@@ -24,7 +24,8 @@ export default function Footer() {
               {[
                 { to: "/", label: "Home" },
                 { to: "/workflows/", label: "n8n Workflows" },
-                { to: "/contact/", label: "Contact" },
+                { to: "/blog/", label: "Blog" },
+  { to: "/contact/", label: "Contact" },
                 { to: "/about/", label: "About" },
               ].map((l) => (
                 <Link key={l.to} to={l.to} className="text-muted-foreground hover:text-neon-purple transition-colors">{l.label}</Link>
