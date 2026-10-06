@@ -36,7 +36,7 @@ for (const t of tags) {
 const srv = spawn("npx", ["vite", "preview", "--port", "4173", "--strictPort"], { stdio: "ignore" });
 await new Promise((r) => setTimeout(r, 4000));
 try {
-  const browser = await chromium.launch();
+  const browser = await chromium.launch(env.CHROMIUM_PATH ? { executablePath: env.CHROMIUM_PATH } : {});
   const page = await browser.newPage();
   for (const r of routes) {
     await page.goto("http://localhost:4173" + r, { waitUntil: "networkidle" });
