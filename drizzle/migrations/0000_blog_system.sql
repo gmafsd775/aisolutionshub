@@ -1,4 +1,3 @@
--- Blog posts
 CREATE TABLE public.blog_posts (
   id uuid PRIMARY KEY DEFAULT gen_random_uuid(),
   slug text NOT NULL UNIQUE CHECK (slug ~ '^[a-z0-9]+(-[a-z0-9]+)*$'),
@@ -29,7 +28,6 @@ CREATE INDEX blog_posts_old_slugs_idx ON public.blog_posts USING GIN (old_slugs)
 CREATE TRIGGER update_blog_posts_updated_at BEFORE UPDATE ON public.blog_posts
   FOR EACH ROW EXECUTE FUNCTION public.update_updated_at_column();
 
--- Redirects for changed slugs
 CREATE TABLE public.blog_redirects (
   id uuid PRIMARY KEY DEFAULT gen_random_uuid(),
   old_slug text NOT NULL UNIQUE,
@@ -43,7 +41,6 @@ ALTER TABLE public.blog_redirects ENABLE ROW LEVEL SECURITY;
 CREATE POLICY "Anyone reads redirects" ON public.blog_redirects FOR SELECT TO anon, authenticated USING (true);
 CREATE POLICY "Authenticated manage redirects" ON public.blog_redirects FOR ALL TO authenticated USING (true) WITH CHECK (true);
 
--- 24h draft preview tokens
 CREATE TABLE public.blog_preview_tokens (
   token text PRIMARY KEY DEFAULT encode(gen_random_bytes(24), 'hex'),
   post_id uuid NOT NULL REFERENCES public.blog_posts(id) ON DELETE CASCADE,
@@ -65,4 +62,3 @@ AS $$
   LIMIT 1
 $$;
 GRANT EXECUTE ON FUNCTION public.get_preview_post(text) TO anon, authenticated;
-

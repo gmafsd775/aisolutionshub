@@ -14,6 +14,104 @@ export type Database = {
   }
   public: {
     Tables: {
+      blog_posts: {
+        Row: {
+          body: string
+          cover_image_url: string | null
+          created_at: string
+          faq: Json
+          id: string
+          meta_description: string | null
+          old_slugs: string[]
+          published_at: string | null
+          slug: string
+          status: string
+          tags: string[]
+          title: string
+          updated_at: string
+        }
+        Insert: {
+          body?: string
+          cover_image_url?: string | null
+          created_at?: string
+          faq?: Json
+          id?: string
+          meta_description?: string | null
+          old_slugs?: string[]
+          published_at?: string | null
+          slug: string
+          status?: string
+          tags?: string[]
+          title: string
+          updated_at?: string
+        }
+        Update: {
+          body?: string
+          cover_image_url?: string | null
+          created_at?: string
+          faq?: Json
+          id?: string
+          meta_description?: string | null
+          old_slugs?: string[]
+          published_at?: string | null
+          slug?: string
+          status?: string
+          tags?: string[]
+          title?: string
+          updated_at?: string
+        }
+        Relationships: []
+      }
+      blog_preview_tokens: {
+        Row: {
+          created_at: string
+          expires_at: string
+          post_id: string
+          token: string
+        }
+        Insert: {
+          created_at?: string
+          expires_at?: string
+          post_id: string
+          token?: string
+        }
+        Update: {
+          created_at?: string
+          expires_at?: string
+          post_id?: string
+          token?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "blog_preview_tokens_post_id_fkey"
+            columns: ["post_id"]
+            isOneToOne: false
+            referencedRelation: "blog_posts"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      blog_redirects: {
+        Row: {
+          created_at: string
+          id: string
+          new_slug: string
+          old_slug: string
+        }
+        Insert: {
+          created_at?: string
+          id?: string
+          new_slug: string
+          old_slug: string
+        }
+        Update: {
+          created_at?: string
+          id?: string
+          new_slug?: string
+          old_slug?: string
+        }
+        Relationships: []
+      }
       contact_messages: {
         Row: {
           created_at: string
@@ -90,7 +188,30 @@ export type Database = {
       [_ in never]: never
     }
     Functions: {
-      [_ in never]: never
+      get_preview_post: {
+        Args: { _token: string }
+        Returns: {
+          body: string
+          cover_image_url: string | null
+          created_at: string
+          faq: Json
+          id: string
+          meta_description: string | null
+          old_slugs: string[]
+          published_at: string | null
+          slug: string
+          status: string
+          tags: string[]
+          title: string
+          updated_at: string
+        }[]
+        SetofOptions: {
+          from: "*"
+          to: "blog_posts"
+          isOneToOne: false
+          isSetofReturn: true
+        }
+      }
     }
     Enums: {
       [_ in never]: never
