@@ -18,6 +18,37 @@
   </url>
   <url>
     <loc>https://damha577.online/blog/</loc>
+    <lastmod>2026-10-07</lastmod>
     <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://damha577.online/blog/n8n-vs-zapier-ai-automation/</loc>
+    <lastmod>2026-10-07</lastmod>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://damha577.online/blog/tag/n8n/</loc>
+    <lastmod>2026-10-07</lastmod>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://damha577.online/blog/tag/zapier/</loc>
+    <lastmod>2026-10-07</lastmod>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://damha577.online/blog/tag/ai-automation/</loc>
+    <lastmod>2026-10-07</lastmod>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://damha577.online/blog/tag/workflow-automation/</loc>
+    <lastmod>2026-10-07</lastmod>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://damha577.online/blog/tag/business-automation/</loc>
+    <lastmod>2026-10-07</lastmod>
+    <priority>0.6</priority>
   </url>
 </urlset>
