@@ -6,8 +6,8 @@ export default function Breadcrumbs({ label, path }: { label: string; path: stri
     "@context": "https://schema.org",
     "@type": "BreadcrumbList",
     itemListElement: [
-      { "@type": "ListItem", position: 1, name: "Home", item: "https://damha577.online/" },
-      { "@type": "ListItem", position: 2, name: label, item: `https://damha577.online${path}` },
+      { "@type": "ListItem", position: 1, name: "Home", item: "https://damha577.com/" },
+      { "@type": "ListItem", position: 2, name: label, item: `https://damha577.com${path}` },
     ],
   };
   return (
