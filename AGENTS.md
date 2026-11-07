@@ -1,4 +1,4 @@
 - Publish flow: `vite build` then `node scripts/prerender.mjs` (snapshots main pages plus every published blog post, tag and page into dist, writes old-slug redirect pages, sitemap.xml and feed.xml), then copy dist → docs/ for GitHub Pages. Why: GitHub Pages has no SPA fallback, so each indexable page needs a real HTML file.
 - Blog auto-publish: the `trigger-rebuild` function sends a GitHub repository_dispatch; `.github/workflows/deploy-on-publish.yml` runs the publish flow and commits docs/. Why: posts live in the database but the live site is static.
 - Blog admin lives at /admin/blog behind the owner login (noindex); blog data access is centralized in src/lib/blog.ts. Why: one place for queries, slug redirects and preview tokens.
-- Canonical domain is https://damha577.online (non-www) everywhere; CNAME = damha577.online. Why: owner's SEO decision.
+- Canonical domain is https://damha577.com (non-www) everywhere; CNAME = damha577.com. Why: the owner migrated the primary domain and old domain redirects to the new one.

@@ -10,6 +10,7 @@ import { getWorkflowById } from "@/lib/store";
 import { Workflow } from "@/lib/types";
 import { toast } from "sonner";
 import { supabase } from "@/integrations/supabase/client";
+import SEOHead from "@/components/SEOHead";
 
 export default function BuyPage() {
   const { id } = useParams<{ id: string }>();
@@ -60,6 +61,11 @@ export default function BuyPage() {
 
   return (
     <div className="container mx-auto px-4 py-12 max-w-5xl">
+      <SEOHead
+        title={`${workflow.title} | Buy n8n Workflow | AI Solutions`}
+        description={workflow.description}
+        path={`/buy/${id || ""}/`}
+      />
       <Button variant="ghost" asChild className="mb-8">
         <Link to="/workflows/"><ArrowLeft className="mr-2 h-4 w-4" /> Back to Solutions</Link>
       </Button>

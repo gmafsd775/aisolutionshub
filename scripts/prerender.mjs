@@ -5,7 +5,7 @@ import fs from "node:fs";
 import path from "node:path";
 import { chromium } from "playwright";
 
-const SITE = "https://damha577.online";
+const SITE = "https://damha577.com";
 const DIST = "dist";
 const PAGE_SIZE = 10;
 const env = { ...Object.fromEntries((fs.existsSync(".env") ? fs.readFileSync(".env", "utf8") : "").split("\n").map((l) => l.match(/^(\w+)="?([^"]*)"?$/)).filter(Boolean).map((m) => [m[1], m[2]])), ...process.env };

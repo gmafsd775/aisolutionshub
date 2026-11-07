@@ -141,7 +141,7 @@ export function AdminBlogEditor() {
           <Input id="title" value={f.title} onChange={(e) => { set("title", e.target.value); if (!slugTouched) set("slug", slugify(e.target.value)); }} /></div>
         <div><Label htmlFor="slug">Slug (address)</Label>
           <Input id="slug" value={f.slug} onChange={(e) => { setSlugTouched(true); set("slug", slugify(e.target.value)); }} />
-          <p className="text-xs text-muted-foreground mt-1">damha577.online/blog/{f.slug || "…"}/{id && " — changing it keeps the old address redirecting here."}</p></div>
+          <p className="text-xs text-muted-foreground mt-1">damha577.com/blog/{f.slug || "…"}/{id && " — changing it keeps the old address redirecting here."}</p></div>
         <div><Label htmlFor="meta">Meta description ({f.meta_description.length}/160)</Label>
           <Textarea id="meta" rows={2} maxLength={160} value={f.meta_description} onChange={(e) => set("meta_description", e.target.value)} /></div>
         <div className="grid sm:grid-cols-2 gap-4">

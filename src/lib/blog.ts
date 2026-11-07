@@ -20,7 +20,7 @@ export interface BlogPost {
   old_slugs: string[];
 }
 
-export const SITE = "https://damha577.online";
+export const SITE = "https://damha577.com";
 export const PAGE_SIZE = 10;
 
 export const slugify = (s: string) =>

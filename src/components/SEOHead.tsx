@@ -26,8 +26,8 @@ export default function SEOHead({ title, description, path = "/", keywords }: SE
     if (keywords) setMeta("keywords", keywords);
     setMeta("og:title", title, true);
     setMeta("og:description", description, true);
-    setMeta("og:url", `https://damha577.online${path}`, true);
-    setMeta("twitter:url", `https://damha577.online${path}`);
+    setMeta("og:url", `https://damha577.com${path}`, true);
+    setMeta("twitter:url", `https://damha577.com${path}`);
     setMeta("twitter:title", title);
     setMeta("twitter:description", description);
 
@@ -37,7 +37,7 @@ export default function SEOHead({ title, description, path = "/", keywords }: SE
       link.rel = "canonical";
       document.head.appendChild(link);
     }
-    link.href = `https://damha577.online${path}`;
+    link.href = `https://damha577.com${path}`;
   }, [title, description, path, keywords]);
 
   return null;
