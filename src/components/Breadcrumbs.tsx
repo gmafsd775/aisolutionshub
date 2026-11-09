@@ -1,13 +1,14 @@
 import { Link } from "react-router-dom";
 import { ChevronRight } from "lucide-react";
+import { absoluteSiteUrl } from "@/config/site";
 
 export default function Breadcrumbs({ label, path }: { label: string; path: string }) {
   const ld = {
     "@context": "https://schema.org",
     "@type": "BreadcrumbList",
     itemListElement: [
-      { "@type": "ListItem", position: 1, name: "Home", item: "https://damha577.com/" },
-      { "@type": "ListItem", position: 2, name: label, item: `https://damha577.com${path}` },
+      { "@type": "ListItem", position: 1, name: "Home", item: absoluteSiteUrl("/") },
+      { "@type": "ListItem", position: 2, name: label, item: absoluteSiteUrl(path) },
     ],
   };
   return (
