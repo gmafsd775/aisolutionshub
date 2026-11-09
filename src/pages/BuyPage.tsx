@@ -64,7 +64,7 @@ export default function BuyPage() {
       <SEOHead
         title={`${workflow.title} | Buy n8n Workflow | AI Solutions`}
         description={workflow.description}
-        path={`/buy/${id || ""}/`}
+        path={id ? `/buy/${id}/` : "/buy/"}
       />
       <Button variant="ghost" asChild className="mb-8">
         <Link to="/workflows/"><ArrowLeft className="mr-2 h-4 w-4" /> Back to Solutions</Link>

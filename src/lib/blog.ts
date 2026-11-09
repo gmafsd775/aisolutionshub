@@ -1,4 +1,5 @@
 import { supabase } from "./supabase";
+import { SITE_URL } from "@/config/site";
 
 // Blog tables are added by a staged migration; cast until generated types include them.
 const db = supabase as any;
@@ -20,7 +21,7 @@ export interface BlogPost {
   old_slugs: string[];
 }
 
-export const SITE = "https://damha577.com";
+export const SITE = SITE_URL;
 export const PAGE_SIZE = 10;
 
 export const slugify = (s: string) =>

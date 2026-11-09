@@ -2,3 +2,4 @@
 - Blog auto-publish: the `trigger-rebuild` function sends a GitHub repository_dispatch; `.github/workflows/deploy-on-publish.yml` runs the publish flow and commits docs/. Why: posts live in the database but the live site is static.
 - Blog admin lives at /admin/blog behind the owner login (noindex); blog data access is centralized in src/lib/blog.ts. Why: one place for queries, slug redirects and preview tokens.
 - Canonical domain is https://damha577.com (non-www) everywhere; CNAME = damha577.com. Why: the owner migrated the primary domain and old domain redirects to the new one.
+- Keep the client-side canonical, Open Graph, and Twitter page URLs centralized in `src/config/site.ts`; the prerender script uses the same origin so generated pages and runtime metadata stay aligned.

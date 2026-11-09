@@ -1,4 +1,5 @@
 import { useEffect } from "react";
+import { absoluteSiteUrl } from "@/config/site";
 
 interface SEOHeadProps {
   title: string;
@@ -26,8 +27,8 @@ export default function SEOHead({ title, description, path = "/", keywords }: SE
     if (keywords) setMeta("keywords", keywords);
     setMeta("og:title", title, true);
     setMeta("og:description", description, true);
-    setMeta("og:url", `https://damha577.com${path}`, true);
-    setMeta("twitter:url", `https://damha577.com${path}`);
+    setMeta("og:url", absoluteSiteUrl(path), true);
+    setMeta("twitter:url", absoluteSiteUrl(path));
     setMeta("twitter:title", title);
     setMeta("twitter:description", description);
 
@@ -37,7 +38,7 @@ export default function SEOHead({ title, description, path = "/", keywords }: SE
       link.rel = "canonical";
       document.head.appendChild(link);
     }
-    link.href = `https://damha577.com${path}`;
+    link.href = absoluteSiteUrl(path);
   }, [title, description, path, keywords]);
 
   return null;
