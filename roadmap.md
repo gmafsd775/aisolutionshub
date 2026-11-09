@@ -2,3 +2,4 @@
 - [x] Update blog, tag, and dynamic purchase page metadata URL generation.
 - [x] Update the sitemap, robots sitemap reference, CNAME, and generated GitHub Pages files.
 - [x] Verify URL generation tests and fetch the homepage plus one published blog post.
+- [x] Confirm all 20 prerendered pages use the new canonical, Open Graph, and Twitter URLs.
