@@ -9,4 +9,8 @@ describe("absoluteSiteUrl", () => {
   it("keeps nested page paths on the new domain", () => {
     expect(absoluteSiteUrl("/blog/example-post/")).toBe("https://damha577.com/blog/example-post/");
   });
+
+  it("keeps dynamic purchase pages on the new domain", () => {
+    expect(absoluteSiteUrl("/buy/workflow-123/")).toBe("https://damha577.com/buy/workflow-123/");
+  });
 });
