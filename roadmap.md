@@ -3,3 +3,6 @@
 - [x] Update the sitemap, robots sitemap reference, CNAME, and generated GitHub Pages files.
 - [x] Verify URL generation tests and fetch the homepage plus one published blog post.
 - [x] Confirm all 20 prerendered pages use the new canonical, Open Graph, and Twitter URLs.
+- [ ] Install GA4 with the existing Measurement ID in the shared HTML head.
+- [ ] Track every client-side route change without duplicating the initial page view.
+- [ ] Verify the generated and live website source, then publish the update.
