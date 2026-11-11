@@ -1,9 +1,9 @@
-import { Suspense, lazy, useEffect, useRef } from "react";
+import { Suspense, lazy } from "react";
 import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-import { BrowserRouter, Routes, Route, useLocation } from "react-router-dom";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import Index from "./pages/Index";
@@ -21,43 +21,12 @@ import ChatLauncher from "./components/ChatLauncher";
 
 const queryClient = new QueryClient();
 
-declare global {
-  interface Window {
-    gtag?: (...args: unknown[]) => void;
-  }
-}
-
-const AnalyticsPageView = () => {
-  const location = useLocation();
-  const isInitialPageView = useRef(true);
-
-  useEffect(() => {
-    if (isInitialPageView.current) {
-      isInitialPageView.current = false;
-      return;
-    }
-
-    const timeoutId = window.setTimeout(() => {
-      window.gtag?.("event", "page_view", {
-        page_title: document.title,
-        page_location: window.location.href,
-        page_path: `${location.pathname}${location.search}${location.hash}`,
-      });
-    }, 0);
-
-    return () => window.clearTimeout(timeoutId);
-  }, [location.pathname, location.search, location.hash]);
-
-  return null;
-};
-
 const App = () => (
   <QueryClientProvider client={queryClient}>
     <TooltipProvider>
       <Toaster />
       <Sonner />
       <BrowserRouter>
-        <AnalyticsPageView />
         <div className="flex flex-col min-h-screen">
           <Navbar />
           <main className="flex-1">
