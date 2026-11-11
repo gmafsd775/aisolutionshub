@@ -5,4 +5,4 @@
 - [x] Confirm all 20 prerendered pages use the new canonical, Open Graph, and Twitter URLs.
 - [x] Install GA4 with the existing Measurement ID in the shared HTML head.
 - [x] Send one explicit GA4 page view on initial load and each client-side route change while retaining Enhanced Measurement events.
-- [ ] Verify the generated and live website source, then publish the update.
+- [ ] Publish the update and verify the live website source; the publish request was declined.
